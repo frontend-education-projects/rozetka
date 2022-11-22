@@ -1,6 +1,7 @@
 import styles from '@/pages/index.module.sass'
 import SideBar from 'elements/SideBar/SideBar'
 import { sidebarLinks } from './api/data/sidebarCategoiesMassive'
+import React from 'react'
 
 export default function Home() {
 

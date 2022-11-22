@@ -7,7 +7,8 @@ type OpenProps = {
 
 export const ModalWindow = ({open,setOpen}:OpenProps) => {
   return (
-    <button onClick={() => setOpen(false)} className={`modal_holder animated ${open ? 'show' : ''} `}>
+    <>
+    <div onClick={() => setOpen(false)} className={`modal_holder animated ${open ? 'show' : ''} `}>
         <div className='modal_window'>
             <div className='modal_header'>
                 <div className='modal_heading'>Вхід</div>
@@ -17,7 +18,8 @@ export const ModalWindow = ({open,setOpen}:OpenProps) => {
 
             </div>
         </div>
-    </button>
+    </div>
+    </>
   )
 }
 
