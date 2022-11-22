@@ -1,0 +1,96 @@
+.header_actions
+    display: flex
+    flex-direction: row
+    align-items: center
+
+.header_actions_component
+    margin-left: 16px
+
+.actions_lang
+    display: flex
+    flex-direction: row
+    align-items: center
+
+.ru_text
+    display: inline-flex
+    border-right: 1px solid var(--global-black-60)
+    font-size: 14px
+    line-height: 28px
+    padding: 0 8px
+    color: #fff
+    cursor: pointer
+    transition: all 0.3s ease
+    &:hover
+        color: var(--global-red)
+
+.lang_item_ua
+    display: flex
+    align-items: center
+    padding: 0 8px
+    cursor: pointer
+
+.image_icon
+    padding-right: 4px
+
+.ua_text
+    display: inline-flex
+    border: 0
+    font-size: 14px
+    line-height: 28px
+    color: var(--global-black-60)
+    transition: all 0.3s ease
+
+.active
+    color: var(--global-black-40)
+
+.lang_item_ua:hover .ua_text
+    color: #fff
+
+.profile_inner
+    display: flex
+    flex-direction: row
+    align-items: center
+
+.btn_user
+    position: relative
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    margin: 0
+    padding: 0
+    border: 0
+    border-radius: 4px
+    background: none
+    transition: all 0.3s ease
+    cursor: pointer
+    &:hover
+        background-color: #fff3
+
+.icon_user
+    color: #fff
+    font-size: 24px
+
+.btn_cart
+    position: relative
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    margin-left: 16px
+    padding: 0
+    border: 0
+    border-radius: 4px
+    background: none
+    transition: all 0.3s ease
+    cursor: pointer
+    &:hover
+        background-color: #fff3
+
+.icon_cart
+    color: #fff
+    font-size: 20px
