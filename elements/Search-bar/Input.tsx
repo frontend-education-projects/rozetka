@@ -1,17 +1,17 @@
 import React from 'react'
 import styles from './Input.module.sass'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMicrophone, faSearch } from "@fortawesome/free-solid-svg-icons";
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 
 export const Input = () => {
   return (
     <div className={styles.input_body}>
         <form action="#" className={styles.input_form}>
             <div className={styles.input_form_inner}>
-        <FontAwesomeIcon className={styles.icon_search} icon={faSearch} />
+        <SearchOutlinedIcon fontSize='large' className={styles.icon_search} />
             <input className={styles.input_search} autoComplete='off' type="text" name='form[]' placeholder='Я шукаю...' />
             <button className={styles.btn_icon_microphone}>
-            <FontAwesomeIcon className={styles.icon_microphone} icon={faMicrophone} />
+            <MicOutlinedIcon className={styles.icon_microphone} />
             </button>
             </div>
         </form>

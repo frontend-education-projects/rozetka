@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const ApplicationStore = () => {
   return (
-    <>
+    <div className={styles.apps_store}>
     <div className={styles.store_title}>Встановлюй наші додатки</div>
     <div className={styles.store_buttons}>
         <a target='_blank' href="https://play.google.com/store/apps/details/?id=ua.com.rozetka.shop&referrer=utm_source%3Dfullversion%26utm_medium%3Dsite%26utm_campaign%3Dfullversion">
@@ -15,7 +15,7 @@ const ApplicationStore = () => {
             <Image loading='lazy' width={102} height={32} src="/Applications/apple.svg" alt='Google Play' title='Додаток для Айфон' />
         </a>
     </div>
-    </>
+    </div>
   )
 }
 

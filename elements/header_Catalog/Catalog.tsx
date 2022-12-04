@@ -1,14 +1,13 @@
 import React from 'react'
 import styles from './Catalog.module.sass'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 
 
 export const Catalog = () => {
   return (
     <div className={styles.header_catalog}>
         <button className={styles.catalog_btn}>
-        <FontAwesomeIcon className={styles.icon_home} icon={faHome} />
+        <GridViewOutlinedIcon sx={{fontSize:30}} />
             Каталог
             </button>
     </div>
