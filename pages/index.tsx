@@ -1,12 +1,22 @@
-import styles from '@/pages/index.module.css'
-import { TestSassStyles } from "../elements/TestSassStyles";
+import styles from "@/pages/index.module.sass";
+import SideBar from "elements/SideBar/SideBar";
+import { sidebarLinks } from "./api/data/sidebarCategoiesMassive";
+import React from "react";
 
 export default function Home() {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-      <TestSassStyles />
+    <>
+      <div className={styles.wrapper}>
+        <div className={styles.main}>
+          <div className={styles.layout_with_sidebar}>
+            <div className={styles.sidebar_main}>
+              <SideBar sidebarLinks={sidebarLinks} />
+            </div>
+
+            <div className={styles.main_content}></div>
+          </div>
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }

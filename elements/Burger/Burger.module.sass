@@ -1,0 +1,35 @@
+
+.icon__menu
+    transition: all .2s ease
+    display: block
+    position: relative
+    flex: 0 0 40px
+    height: 40px
+    cursor: pointer
+    z-index: 5
+    background-color: var(--global-black)
+    border: 0
+    border-radius: 4px
+    margin-right: 16px
+    span,
+    &::before,
+    &::after
+        content: ""
+        left: 20%
+        position: absolute
+        width: 60%
+        height: 2px
+        background-color: #fff
+        border-radius: 5px
+
+    &::before
+        top: 28%
+
+    &::after
+        bottom: 23%
+
+        span
+            top: calc(50% - 1px)
+
+.icon__menu:hover
+    background-color: #fff3
