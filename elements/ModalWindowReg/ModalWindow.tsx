@@ -1,5 +1,5 @@
 import AuthModalSocials from "elements/AuthModalSocials/AuthModalSocials";
-import React from "react";
+import React, { useState } from "react";
 import ButtonModalWindow from "./ButtonModalWindow";
 import ModalWindowRegestration from "./ModalWindowRegestration";
 import { ModalWindowRemindPass } from "./ModalWindowRemindPass";
@@ -21,6 +21,20 @@ export const ModalWindow = ({
   openRegestration,
   setOpenRegestration,
 }: OpenProps) => {
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState("eye-slash");
+
+  const handleToggle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    if (type === "password") {
+      setIcon("eye");
+      setType("text");
+    } else {
+      setIcon("eye-slash");
+      setType("password");
+    }
+  };
+
   return (
     <>
       <ModalWindowRemindPass
@@ -57,18 +71,28 @@ export const ModalWindow = ({
                     />
                   </div>
 
-                  <div className="form_row">
-                    <label className="form_label"> Пароль </label>
+                  <label className="form_label"> Пароль </label>
+                  <div className="form_row form_row_password">
                     <input
-                      type="password"
+                      type={type}
                       id="auth_password"
                       className="input input_password"
                     />
+                    <button onClick={handleToggle} className="password_blind">
+                      <i className={`fa-solid fa-${icon}`}></i>
+                    </button>
                   </div>
 
                   <div className="auth_modal_restore">
-                    <input className="remember_checkbox" type="checkbox" />
-                    <label className="auth_modal_remember_checkbox">
+                    <input
+                      className="remember_checkbox"
+                      type="checkbox"
+                      id="rememberMe"
+                    />
+                    <label
+                      htmlFor={"rememberMe"}
+                      className="auth_modal_remember_checkbox"
+                    >
                       Запам'ятати мене
                     </label>
 
