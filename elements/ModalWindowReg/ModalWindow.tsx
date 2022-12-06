@@ -1,6 +1,7 @@
 import AuthModalSocials from "elements/AuthModalSocials/AuthModalSocials";
 import React from "react";
 import ButtonModalWindow from "./ButtonModalWindow";
+import ModalWindowRegestration from "./ModalWindowRegestration";
 import { ModalWindowRemindPass } from "./ModalWindowRemindPass";
 
 type OpenProps = {
@@ -8,6 +9,8 @@ type OpenProps = {
   setOpen: any;
   openRemindePass: any;
   setOpenRemindePass: any;
+  openRegestration: any;
+  setOpenRegestration: any;
 };
 
 export const ModalWindow = ({
@@ -15,12 +18,20 @@ export const ModalWindow = ({
   setOpen,
   openRemindePass,
   setOpenRemindePass,
+  openRegestration,
+  setOpenRegestration,
 }: OpenProps) => {
   return (
     <>
       <ModalWindowRemindPass
         openRemindePass={openRemindePass}
         setOpenRemindePass={setOpenRemindePass}
+        setOpen={setOpen}
+      />
+      <ModalWindowRegestration
+        openRegestration={openRegestration}
+        setOpenRegestration={setOpenRegestration}
+        setOpen={setOpen}
       />
       <div
         onClick={() => setOpen(false)}
@@ -65,6 +76,7 @@ export const ModalWindow = ({
                       onClick={(e) => {
                         e.preventDefault();
                         setOpenRemindePass(true);
+                        setOpen(false);
                       }}
                       className="auth_modal_link"
                     >
@@ -74,7 +86,14 @@ export const ModalWindow = ({
 
                   <div className="form_row button_center">
                     <ButtonModalWindow entry="Увійти" />
-                    <button className="button button_link_modal">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setOpenRegestration(true);
+                        setOpen(false);
+                      }}
+                      className="button button_link_modal"
+                    >
                       Зареєструватися
                     </button>
                   </div>
