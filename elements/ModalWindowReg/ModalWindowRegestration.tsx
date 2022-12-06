@@ -3,19 +3,21 @@ import React from "react";
 import ButtonModalWindow from "./ButtonModalWindow";
 
 type regestrationProp = {
-  openRegetration: any;
+  openRegestration: any;
   setOpenRegestration: any;
+  setOpen: any;
 };
 
 const ModalWindowRegestration = ({
-  openRegetration,
+  openRegestration,
   setOpenRegestration,
+  setOpen,
 }: regestrationProp) => {
   return (
     <>
       <div
         onClick={() => setOpenRegestration(false)}
-        className={`modal_holder animated ${openRegetration ? "show" : ""} `}
+        className={`modal_holder animated ${openRegestration ? "show" : ""} `}
       >
         <div className="modal_window" onClick={(e) => e.stopPropagation()}>
           <div className="modal_header">
@@ -90,7 +92,14 @@ const ModalWindowRegestration = ({
 
                   <div className="form_row button_center">
                     <ButtonModalWindow entry="Зареєструватися" />
-                    <button className="button button_link_modal">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setOpenRegestration(false);
+                        setOpen(true);
+                      }}
+                      className="button button_link_modal"
+                    >
                       Я вже зареєстрований
                     </button>
                   </div>

@@ -5,11 +5,13 @@ import ButtonModalWindow from "./ButtonModalWindow";
 type remindePassProp = {
   openRemindePass: any;
   setOpenRemindePass: any;
+  setOpen: any;
 };
 
 export const ModalWindowRemindPass = ({
   openRemindePass,
   setOpenRemindePass,
+  setOpen,
 }: remindePassProp) => {
   return (
     <>
@@ -42,7 +44,14 @@ export const ModalWindowRemindPass = ({
 
                   <div className="form_row button_center">
                     <ButtonModalWindow entry="Отримати тимчасовий пароль" />
-                    <button className="button button_link_modal">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setOpenRemindePass(false);
+                        setOpen(true);
+                      }}
+                      className="button button_link_modal"
+                    >
                       Я згадав свій пароль
                     </button>
                   </div>

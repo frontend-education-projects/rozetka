@@ -33,10 +33,19 @@ export const SideBar = ({ sidebarLinks }: sidebarLinks) => {
   }
 
   const [open, setOpen] = useState(false);
+  const [openRemindePass, setOpenRemindePass] = useState(false);
+  const [openRegestration, setOpenRegestration] = useState(false);
 
   return (
     <>
-      <ModalWindow open={open} setOpen={setOpen} />
+      <ModalWindow
+        open={open}
+        setOpen={setOpen}
+        openRemindePass={openRemindePass}
+        setOpenRemindePass={setOpenRemindePass}
+        openRegestration={openRegestration}
+        setOpenRegestration={setOpenRegestration}
+      />
       <div className={styles.main_page_sidebar}>
         {/* sidebar links products */}
         <div className={styles.sidebar}>

@@ -9,7 +9,7 @@ import ModalWindow from "elements/ModalWindowReg/ModalWindow";
 export const HeaderActions = () => {
   const [open, setOpen] = useState(false);
   const [openRemindePass, setOpenRemindePass] = useState(false);
-  const [openRegetration, setOpenRegestration] = useState(false);
+  const [openRegestration, setOpenRegestration] = useState(false);
 
   return (
     <>
@@ -18,6 +18,8 @@ export const HeaderActions = () => {
         setOpen={setOpen}
         openRemindePass={openRemindePass}
         setOpenRemindePass={setOpenRemindePass}
+        openRegestration={openRegestration}
+        setOpenRegestration={setOpenRegestration}
       />
       <div className={styles.header_actions}>
         <div className={styles.header_actions_component}>
