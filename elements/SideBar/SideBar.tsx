@@ -74,11 +74,11 @@ export const SideBar = ({ sidebarLinks }: sidebarLinks) => {
           Довідковий центр
         </Link>
 
-        <Link className={styles.links_help} href="/">
-          <span className={styles.help_icon}>
+        <Link className={styles.chat_rozetka} href="/">
+          <span className={styles.chat_icon}>
             <FontAwesomeIcon icon={faPaperPlane} />
           </span>
-          Зв'язатися з нами
+          Чат з ROZETKA
         </Link>
 
         <Link className={styles.links_help} href="/">

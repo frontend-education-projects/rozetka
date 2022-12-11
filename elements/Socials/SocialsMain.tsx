@@ -4,6 +4,7 @@ import {} from "@fortawesome/free-solid-svg-icons";
 
 type SocialsLinksProps = {
   SocialsLinks: any;
+  socialsClass?: string;
 };
 
 type SocialsLinksInfoProps = {
@@ -13,9 +14,9 @@ type SocialsLinksInfoProps = {
   socPath: string;
 };
 
-const SocialsMain = ({ SocialsLinks }: SocialsLinksProps) => {
+const SocialsMain = ({ SocialsLinks, socialsClass }: SocialsLinksProps) => {
   return (
-    <div className="socials_sidebar_block">
+    <div className={`socials_sidebar_block ${socialsClass}`}>
       <div className="socials_sidebar_heading">Ми в соціальних мережах</div>
       <ul className="socials_list">
         {SocialsLinks.map(
