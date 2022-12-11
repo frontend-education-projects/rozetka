@@ -2,7 +2,7 @@ import React from "react";
 
 const Partners = () => {
   return (
-    <div className="footer_sidebar_links">
+    <div className="footer_sidebar_links border_zero">
       <div className="footer_sidebar_heading">
         <div className="footer_sidebar_title">Інформація про компанію</div>
       </div>

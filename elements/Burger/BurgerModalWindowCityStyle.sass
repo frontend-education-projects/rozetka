@@ -1,0 +1,227 @@
+.modal_city_holder
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background-color: #00000080
+    transition: all 0.1s ease-in-out
+    z-index: 10
+    border: 0
+    outline: none
+
+.modal_city_window
+    background-color: #fff
+    width: 100%
+    max-width: 640px
+    max-height: 100%
+    height: auto
+    border-radius: 8px
+    position: absolute
+    left: 50%
+    top: 50%
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1)
+    transition: all 0.3s ease-in-out
+
+.modal_city_holder.animated_city
+    opacity: 0
+    visibility: hidden
+    .modal_city_window
+        visibility: hidden
+        transform: translate(-50%, -30%) scale(0)
+
+.modal_city_holder.show_city
+    opacity: 1
+    visibility: visible
+    .modal_city_window
+        visibility: visible
+        transform: translate(-50%, -45%) scale(1)
+
+.modal_city_header
+    padding: 0 24px
+    position: relative
+    display: flex
+    flex-direction: row
+    flex-shrink: 0
+    align-items: center
+    height: 57px
+    border-bottom: 1px solid var(--global-black-40)
+    justify-content: space-between
+
+.modal_city_heading
+    font-size: 24px
+    color: var(--global-black)
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+.modal_city_close
+    font-size: 20px
+    color: var(--global-black-80)
+    font-weight: 500
+    position: absolute
+    z-index: 99
+    right: 0
+    top: 0
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 56px
+    height: 56px
+    background-color: #fffc
+    border: none
+    border-radius: 8px
+    outline: none
+    padding: 0
+    transition: all .2s ease
+    cursor: pointer
+    &:hover
+        color: var(--global-red)
+
+.modal_city_content
+    padding: 24px
+    max-height: 100%
+    overflow-y: auto
+
+.header_location_intro
+    display: flex
+    margin: 0
+    flex-direction: row
+    align-items: center
+    margin-bottom: 24px
+    font-size: 14px
+    color: var(--global-black-40)
+
+.intro_icon
+    font-size: 20px
+    width: 24px
+    height: 24px
+    margin-right: 8px
+
+.header_location_popular
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    margin-bottom: 8px
+
+.header_location_popular_item
+    width: 33.33333%
+    margin-bottom: 8px
+
+.header_location_popular_link
+    padding: 0
+    position: relative
+    display: inline-block
+    padding-left: 12px
+    padding-right: 12px
+    border: 1px solid transparent
+    border-radius: 4px
+    font-size: 18px
+    line-height: 40px
+    color: var(--global-link)
+    transition: all 0.2s ease
+    &:hover
+        color: var(--global-red)
+
+.header_location_search
+    margin-bottom: 24px
+
+.header_form_row
+    position: relative
+    border: 0
+    padding: 0
+    margin: 0
+
+.form_label
+    color: var(--global-black-60)
+    font-size: 12px
+    display: block
+    margin-bottom: 6px
+
+.header_location_search_input
+    width: 100%
+
+.autocomplete
+    position: relative
+
+.input_location
+    width: 100%
+    height: 40px
+    font-size: 14px
+    transform: translateZ(0)
+    padding-left: 12px
+    padding-right: 12px
+    border: 1px solid var(--global-black-40)
+    border-radius: 4px
+    outline: none
+    &:focus
+        box-shadow: 0 0 0 2px #6fc4e5
+
+.autocomplete_list
+    display: none
+    background-color: #fff
+    border-radius: 4px
+    box-shadow: 0 2px 4px rgba(#221f1f,.25)
+    left: 0
+    margin-top: 4px
+    max-height: 210px
+    overflow: auto
+    position: absolute
+    top: 100%
+    width: 100%
+    z-index: 15
+
+.header_location__search_example
+    margin: 0
+    margin-top: 24px
+    font-size: 14px
+    color: var(--global-black-40)
+
+.header_location_example_link
+    padding: 0
+    margin-left: 4px
+    position: relative
+    display: inline-block
+    border: 1px solid transparent
+    border-radius: 4px
+    font-size: 14px
+    color: #1867ad
+    transition: all 0.2s ease
+    &:hover
+        color: var(--global-red)
+        text-decoration: underline
+
+.header_location_footer
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin-bottom: 16px
+
+.location_footer_button
+    color: #3e77aa
+    background-color: #f5f5f5
+    box-shadow: inset 0 0 0 1px #ebebeb
+    font-size: 16px
+    height: 40px
+    line-height: 40px
+    &:hover
+        text-decoration: none
+        color: #3e77aa
+        background-color: #ebe8e8
+
+.location_footer_applybutton
+    background-color: #00a046
+    color: #fff
+    font-size: 16px
+    height: 40px
+    &:hover
+        background-color: #029441
+
+.header_location_caption
+    padding: 0
+    margin: 0
+    border-top: 1px solid var(--global-black-10)
+    padding-top: 24px
+    color: var(--global-black-40)
+    line-height: 1.4
