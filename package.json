@@ -19,6 +19,7 @@
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-hook-form": "^7.40.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

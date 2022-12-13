@@ -3,6 +3,12 @@ import React, { useState } from "react";
 import ButtonModalWindow from "./ButtonModalWindow";
 import ModalWindowRegestration from "./ModalWindowRegestration";
 import { ModalWindowRemindPass } from "./ModalWindowRemindPass";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+interface IFormsValid {
+  email: string;
+  password: string;
+}
 
 type OpenProps = {
   open: any;
@@ -35,6 +41,20 @@ export const ModalWindow = ({
     }
   };
 
+  const {
+    register,
+    formState: { errors, isValid },
+    handleSubmit,
+    reset,
+  } = useForm<IFormsValid>({
+    mode: "onBlur",
+  });
+
+  const onSubmit: SubmitHandler<IFormsValid> = (data: any) => {
+    alert(JSON.stringify(data));
+    reset();
+  };
+
   return (
     <>
       <ModalWindowRemindPass
@@ -60,24 +80,48 @@ export const ModalWindow = ({
           </div>
           <div className="modal_content">
             <div className="auth_modal">
-              <form className="auth_modal_form">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="auth_modal_form"
+              >
                 <fieldset className="reset_fieldset">
                   <div className="form_row">
                     <label className="form_label">Ел. пошта або телефон</label>
                     <input
+                      {...register("email", {
+                        required:
+                          "Введено невірну адресу ел. пошти або номер телефону",
+                        pattern: {
+                          value: /^\S+@\S+\.\S+$/,
+                          message:
+                            "Введіть коректну ел. пошту або номер телефона",
+                        },
+                      })}
                       type="email"
                       id="auth_email"
                       className="input input_email"
                     />
+                    {errors?.email && (
+                      <p className="error_message">
+                        <i className="error_icon fa-solid fa-triangle-exclamation"></i>
+                        {errors?.email?.message}
+                      </p>
+                    )}
                   </div>
 
                   <label className="form_label"> Пароль </label>
                   <div className="form_row form_row_password">
                     <input
+                      {...register("password", {
+                        required: true,
+                      })}
                       type={type}
                       id="auth_password"
                       className="input input_password"
                     />
+                    {errors?.password && (
+                      <i className="error_icon_password fa-solid fa-triangle-exclamation"></i>
+                    )}
                     <button onClick={handleToggle} className="password_blind">
                       <i className={`fa-solid fa-${icon}`}></i>
                     </button>
@@ -109,7 +153,7 @@ export const ModalWindow = ({
                   </div>
 
                   <div className="form_row button_center">
-                    <ButtonModalWindow entry="Увійти" />
+                    <ButtonModalWindow entry="Увійти" isValid={!isValid} />
                     <button
                       onClick={(e) => {
                         e.preventDefault();
