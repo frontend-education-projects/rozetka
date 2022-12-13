@@ -11,8 +11,6 @@ import {
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import AboutCompany from "elements/FooterSidebarElements/AboutCompany";
 import Help from "elements/FooterSidebarElements/Help";
-import Servises from "elements/FooterSidebarElements/Servises";
-import Partners from "elements/FooterSidebarElements/Partners";
 import ApplicationStore from "elements/ApplicationStore/ApplicationStore";
 import SocialsMain from "elements/Socials/SocialsMain";
 import { SocialsLinks } from "@/pages/api/data/sidebarCategoiesMassive";
