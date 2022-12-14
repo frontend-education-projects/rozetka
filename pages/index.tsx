@@ -2,8 +2,9 @@ import styles from "@/pages/index.module.sass";
 import SideBar from "elements/SideBar/SideBar";
 import { sidebarLinks } from "./api/data/sidebarCategoiesMassive";
 import React from "react";
+import MainSlider from "elements/MainSlider/MainSlider";
 
-export default function Home() {
+export const Home = () => {
   return (
     <>
       <div className={styles.wrapper}>
@@ -13,10 +14,14 @@ export default function Home() {
               <SideBar sidebarLinks={sidebarLinks} />
             </div>
 
-            <div className={styles.main_content}></div>
+            <div className={styles.main_content}>
+              <MainSlider />
+            </div>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default Home;

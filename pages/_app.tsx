@@ -8,6 +8,7 @@ import "../elements/FooterCopyrightModal/CopyrightModalWindow.sass";
 import "../elements/Burger/BurgerMenu.sass";
 import "../elements/Burger/BurgerModalWindowCityStyle.sass";
 import "../elements/Accordion/AccordionStyle.sass";
+import "../elements/MainSlider/MainSliderStyle.sass";
 import { Layout } from "elements/Layout/Layout";
 import type { AppProps } from "next/app";
 import React from "react";
