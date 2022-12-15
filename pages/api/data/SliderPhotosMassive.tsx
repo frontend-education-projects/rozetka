@@ -18,12 +18,6 @@ export const SliderPhotoMassive: SliderPhotoProp[] = [
   },
 
   {
-    id: 26,
-    picture: "slider3",
-    pathPicture: "/",
-  },
-
-  {
     id: 27,
     picture: "slider4",
     pathPicture: "/",
