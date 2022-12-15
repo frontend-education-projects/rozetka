@@ -1,33 +1,29 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCartShopping,
-  faCircleQuestion,
-  faPaperPlane,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
-import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
-import AboutCompany from "elements/FooterSidebarElements/AboutCompany";
-import Help from "elements/FooterSidebarElements/Help";
-import ApplicationStore from "elements/ApplicationStore/ApplicationStore";
-import SocialsMain from "elements/Socials/SocialsMain";
-import { SocialsLinks } from "@/pages/api/data/sidebarCategoiesMassive";
-import CustomAccordion from "elements/Accordion/CustomAccordion";
+import { faCartShopping, faCircleQuestion, faPaperPlane, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import CustomAccordion from 'src/elements/Accordion/CustomAccordion'
+import ApplicationStore from 'src/elements/ApplicationStore/ApplicationStore'
+import AboutCompany from 'src/elements/FooterSidebarElements/AboutCompany'
+import Help from 'src/elements/FooterSidebarElements/Help'
+import SocialsMain from 'src/elements/Socials/SocialsMain'
+
+import { SocialsLinks } from '../../pages/api/data/sidebarCategoiesMassive'
 
 type BurgerProp = {
-  openBurgerMenu: any;
-  setOpenBurgreMenu: any;
-  open: any;
-  setOpen: any;
-  openRemindePass: any;
-  setOpenRemindePass: any;
-  openRegestration: any;
-  setOpenRegestration: any;
-  openWindowCity: any;
-  setOpenWindowCity: any;
-};
+  openBurgerMenu: any
+  setOpenBurgreMenu: any
+  open: any
+  setOpen: any
+  openRemindePass: any
+  setOpenRemindePass: any
+  openRegestration: any
+  setOpenRegestration: any
+  openWindowCity: any
+  setOpenWindowCity: any
+}
 
 const BurgerMenu = ({
   openBurgerMenu,
@@ -44,27 +40,22 @@ const BurgerMenu = ({
   return (
     <>
       <div
+        className={`burger_holder animated_burger ${openBurgerMenu ? 'show_burger' : ''} `}
         onClick={() => setOpenBurgreMenu(false)}
-        className={`burger_holder animated_burger ${
-          openBurgerMenu ? "show_burger" : ""
-        } `}
       >
         <div className="burger_window" onClick={(e) => e.stopPropagation()}>
           <div className="burger_menu_header">
             <Link href="/">
               <Image
-                className="burger_logo"
-                width={144}
-                height={24}
-                src="/Logo/logo.svg"
                 alt="Rozetka"
+                className="burger_logo"
+                height={24}
                 placeholder="empty"
+                src="/Logo/logo.svg"
+                width={144}
               />
             </Link>
-            <button
-              onClick={() => setOpenBurgreMenu(false)}
-              className="burger_close"
-            >
+            <button className="burger_close" onClick={() => setOpenBurgreMenu(false)}>
               X
             </button>
           </div>
@@ -78,38 +69,32 @@ const BurgerMenu = ({
                 <div className="burger_menu_auth_content">
                   <div className="burger_menu_auth_buttons">
                     <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpenBurgreMenu(false);
-                        setOpen(true);
-                      }}
                       className="button auth_button"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setOpenBurgreMenu(false)
+                        setOpen(true)
+                      }}
                     >
                       Вхід
                     </button>
                     <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpenBurgreMenu(false);
-                        setOpenRegestration(true);
-                      }}
                       className="button auth_button"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setOpenBurgreMenu(false)
+                        setOpenRegestration(true)
+                      }}
                     >
                       Реєстрація
                     </button>
                   </div>
-                  <p className="auth_caption">
-                    Авторизуйтесь для отримання розширених можливостей
-                  </p>
+                  <p className="auth_caption">Авторизуйтесь для отримання розширених можливостей</p>
                 </div>
               </div>
             </div>
-            <a
-              href="https://savelife.in.ua/donate/"
-              className="burger_comeback"
-            >
-              <i className="comeback_shield fa-solid fa-shield-heart"></i>{" "}
-              Повернись живим
+            <a className="burger_comeback" href="https://savelife.in.ua/donate/">
+              <i className="comeback_shield fa-solid fa-shield-heart"></i> Повернись живим
               <i className="comeback_arrow fa-solid fa-chevron-right"></i>
             </a>
 
@@ -138,11 +123,7 @@ const BurgerMenu = ({
                 </a>
               </li>
               <li className="burger_menu_item border_zero">
-                <Link
-                  className="burger_menu_button"
-                  onClick={() => setOpenBurgreMenu(false)}
-                  href="/shopCart/ShopCart"
-                >
+                <Link className="burger_menu_button" href="/shopCart/ShopCart" onClick={() => setOpenBurgreMenu(false)}>
                   <span className="burger_menu_icon_button">
                     <FontAwesomeIcon icon={faCartShopping} />
                   </span>
@@ -163,13 +144,7 @@ const BurgerMenu = ({
                       </li>
                       <li className="burger_lang_item lang_space">
                         <a className="lang_link lang_link_active" href="/">
-                          <Image
-                            className="lang_icon"
-                            width={24}
-                            height={16}
-                            src="/Lang/ua.svg"
-                            alt="ua"
-                          />
+                          <Image alt="ua" className="lang_icon" height={16} src="/Lang/ua.svg" width={24} />
                           UA
                         </a>
                       </li>
@@ -180,12 +155,12 @@ const BurgerMenu = ({
                   <p className="burger_menu_switch_label">Місто</p>
                   <div className="burger_menu_city_toggle">
                     <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpenWindowCity(true);
-                        setOpenBurgreMenu(false);
-                      }}
                       className="button city_toggle"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setOpenWindowCity(true)
+                        setOpenBurgreMenu(false)
+                      }}
                     >
                       <span className="city_toggle_text">Умань</span>
                       <i className="city_toggle_arrow fa-solid fa-chevron-down"></i>
@@ -196,7 +171,7 @@ const BurgerMenu = ({
               <li className="burger_menu_item border_zero">
                 <AboutCompany />
                 <Help />
-                <CustomAccordion accordionTitle={"Сервіси"}>
+                <CustomAccordion accordionTitle={'Сервіси'}>
                   <ul className="footer_sidebar_list">
                     <li>
                       <a href="/">Бонусний рахунок</a>
@@ -215,7 +190,7 @@ const BurgerMenu = ({
                     </li>
                   </ul>
                 </CustomAccordion>
-                <CustomAccordion accordionTitle={"Партнерам"}>
+                <CustomAccordion accordionTitle={'Партнерам'}>
                   <ul className="footer_sidebar_list">
                     <li>
                       <a href="/">Продавати на Розетці</a>
@@ -232,17 +207,14 @@ const BurgerMenu = ({
                   </ul>
                 </CustomAccordion>
               </li>
-              <ApplicationStore appClass={"app_store_burger"} />
-              <SocialsMain
-                socialsClass={"socials_sidebar_block_burger"}
-                SocialsLinks={SocialsLinks}
-              />
+              <ApplicationStore appClass={'app_store_burger'} />
+              <SocialsMain SocialsLinks={SocialsLinks} socialsClass={'socials_sidebar_block_burger'} />
             </ul>
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default BurgerMenu;
+export default BurgerMenu

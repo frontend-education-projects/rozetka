@@ -1,8 +1,9 @@
-import styles from "@/pages/index.module.sass";
-import SideBar from "elements/SideBar/SideBar";
-import { sidebarLinks } from "./api/data/sidebarCategoiesMassive";
-import React from "react";
-import MainSlider from "elements/MainSlider/MainSlider";
+import React from 'react'
+import MainSlider from 'src/elements/MainSlider/MainSlider'
+import SideBar from 'src/elements/SideBar/SideBar'
+
+import { sidebarLinks } from './api/data/sidebarCategoiesMassive'
+import styles from './index.module.sass'
 
 export const Home = () => {
   return (
@@ -21,7 +22,7 @@ export const Home = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

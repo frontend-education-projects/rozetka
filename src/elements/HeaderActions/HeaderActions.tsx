@@ -1,25 +1,26 @@
-import React, { useState } from "react";
-import styles from "./HeaderActions.module.sass";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
-import ModalWindow from "elements/ModalWindowReg/ModalWindow";
+import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import ModalWindow from 'src/elements/ModalWindowReg/ModalWindow'
+
+import styles from './HeaderActions.module.sass'
 
 export const HeaderActions = () => {
-  const [open, setOpen] = useState(false);
-  const [openRemindePass, setOpenRemindePass] = useState(false);
-  const [openRegestration, setOpenRegestration] = useState(false);
+  const [open, setOpen] = useState(false)
+  const [openRemindePass, setOpenRemindePass] = useState(false)
+  const [openRegestration, setOpenRegestration] = useState(false)
 
   return (
     <>
       <ModalWindow
         open={open}
-        setOpen={setOpen}
-        openRemindePass={openRemindePass}
-        setOpenRemindePass={setOpenRemindePass}
         openRegestration={openRegestration}
+        openRemindePass={openRemindePass}
+        setOpen={setOpen}
         setOpenRegestration={setOpenRegestration}
+        setOpenRemindePass={setOpenRemindePass}
       />
       <div className={styles.header_actions}>
         <div className={styles.header_actions_component}>
@@ -30,7 +31,7 @@ export const HeaderActions = () => {
 
             <div className={styles.lang_item_ua}>
               <div className={styles.image_icon}>
-                <Image width={24} height={16} src="/Lang/ua.svg" alt="ua" />
+                <Image alt="ua" height={16} src="/Lang/ua.svg" width={24} />
               </div>
               <div className={styles.ua_text}>UA</div>
             </div>
@@ -40,7 +41,7 @@ export const HeaderActions = () => {
         <div className={styles.header_actions_component}>
           <div className={styles.profile_inner}>
             <div className={styles.component_profile}>
-              <button onClick={() => setOpen(true)} className={styles.btn_user}>
+              <button className={styles.btn_user} onClick={() => setOpen(true)}>
                 <FontAwesomeIcon className={styles.icon_user} icon={faUser} />
               </button>
             </div>
@@ -48,10 +49,7 @@ export const HeaderActions = () => {
             <div className={styles.component_cart}>
               <Link href="/shopCart/ShopCart">
                 <button className={styles.btn_cart}>
-                  <FontAwesomeIcon
-                    className={styles.icon_cart}
-                    icon={faCartShopping}
-                  />
+                  <FontAwesomeIcon className={styles.icon_cart} icon={faCartShopping} />
                 </button>
               </Link>
             </div>
@@ -59,7 +57,7 @@ export const HeaderActions = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default HeaderActions;
+export default HeaderActions
