@@ -1,27 +1,24 @@
-import AuthModalSocials from "elements/AuthModalSocials/AuthModalSocials";
-import React, { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import ButtonModalWindow from "./ButtonModalWindow";
+import React, { useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import AuthModalSocials from 'src/elements/AuthModalSocials/AuthModalSocials'
+
+import ButtonModalWindow from './ButtonModalWindow'
 
 type regestrationProp = {
-  openRegestration: any;
-  setOpenRegestration: any;
-  setOpen: any;
-};
-
-interface IFormsValid {
-  email: string;
-  firstname: string;
-  lastname: string;
-  phone: number;
-  password: string;
+  openRegestration: any
+  setOpenRegestration: any
+  setOpen: any
 }
 
-const ModalWindowRegestration = ({
-  openRegestration,
-  setOpenRegestration,
-  setOpen,
-}: regestrationProp) => {
+interface IFormsValid {
+  email: string
+  firstname: string
+  lastname: string
+  phone: number
+  password: string
+}
+
+const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpen }: regestrationProp) => {
   const {
     register,
     formState: { errors, isValid },
@@ -29,65 +26,58 @@ const ModalWindowRegestration = ({
     reset,
     setValue,
   } = useForm<IFormsValid>({
-    mode: "onBlur",
-  });
+    mode: 'onBlur',
+  })
 
   const onSubmit: SubmitHandler<IFormsValid> = (data: any) => {
-    alert(JSON.stringify(data));
-    reset();
-  };
+    alert(JSON.stringify(data))
+    reset()
+  }
 
-  const [type, setType] = useState("password");
-  const [icon, setIcon] = useState("eye-slash");
+  const [type, setType] = useState('password')
+  const [icon, setIcon] = useState('eye-slash')
 
   const handleToggle = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
-    if (type === "password") {
-      setIcon("eye");
-      setType("text");
+    e.preventDefault()
+    if (type === 'password') {
+      setIcon('eye')
+      setType('text')
     } else {
-      setIcon("eye-slash");
-      setType("password");
+      setIcon('eye-slash')
+      setType('password')
     }
-  };
+  }
 
   return (
     <>
       <div
+        className={`modal_holder animated ${openRegestration ? 'show' : ''} `}
         onClick={() => setOpenRegestration(false)}
-        className={`modal_holder animated ${openRegestration ? "show" : ""} `}
       >
         <div className="modal_window" onClick={(e) => e.stopPropagation()}>
           <div className="modal_header">
             <div className="modal_heading">Реєстрація</div>
-            <button
-              onClick={() => setOpenRegestration(false)}
-              className="modal_close"
-            >
+            <button className="modal_close" onClick={() => setOpenRegestration(false)}>
               X
             </button>
           </div>
           <div className="modal_content">
             <div className="auth_modal">
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="auth_modal_form"
-              >
+              <form className="auth_modal_form" onSubmit={handleSubmit(onSubmit)}>
                 <fieldset className="reset_fieldset">
                   <div className="form_row">
                     <label className="form_label">Ім'я</label>
                     <input
-                      {...register("firstname", {
+                      {...register('firstname', {
                         required: "Введіть своє ім'я кирилицею",
                         pattern: {
-                          value:
-                            /^[аАбБвВгГдДеЕёЁжЖзЗиИіІйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯ]+$/,
+                          value: /^[аАбБвВгГдДеЕёЁжЖзЗиИіІйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯ]+$/,
                           message: "Введіть своє ім'я кирилицею",
                         },
                       })}
-                      type="text"
-                      id="auth_name"
                       className="input input_email"
+                      id="auth_name"
+                      type="text"
                     />
                     {errors?.firstname && (
                       <p className="error_message">
@@ -100,17 +90,16 @@ const ModalWindowRegestration = ({
                   <div className="form_row">
                     <label className="form_label">Прізвище</label>
                     <input
-                      {...register("lastname", {
-                        required: "Введіть своє прізвище кирилицею",
+                      {...register('lastname', {
+                        required: 'Введіть своє прізвище кирилицею',
                         pattern: {
-                          value:
-                            /^[аАбБвВгГдДеЕёЁжЖзЗиИіІйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯ]+$/,
-                          message: "Введіть своє прізвище кирилицею",
+                          value: /^[аАбБвВгГдДеЕёЁжЖзЗиИіІйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯ]+$/,
+                          message: 'Введіть своє прізвище кирилицею',
                         },
                       })}
-                      type="text"
-                      id="auth_lastname"
                       className="input "
+                      id="auth_lastname"
+                      type="text"
                     />
                     {errors?.lastname && (
                       <p className="error_message">
@@ -123,19 +112,17 @@ const ModalWindowRegestration = ({
                   <div className="form_row">
                     <label className="form_label">Номер телефону</label>
                     <input
-                      {...register("phone", {
-                        required: "Введіть номер мобільного телефону",
+                      {...register('phone', {
+                        required: 'Введіть номер мобільного телефону',
                         pattern: {
-                          value:
-                            /((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))/g,
-                          message:
-                            "Введіть коректний номер мобільного телефону",
+                          value: /((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))/g,
+                          message: 'Введіть коректний номер мобільного телефону',
                         },
                       })}
-                      type="phone"
-                      placeholder="+380"
-                      id="auth_phone"
                       className="input"
+                      id="auth_phone"
+                      placeholder="+380"
+                      type="phone"
                     />
                     {errors?.phone && (
                       <p className="error_message">
@@ -148,18 +135,16 @@ const ModalWindowRegestration = ({
                   <div className="form_row">
                     <label className="form_label">Ел. пошта або телефон</label>
                     <input
-                      {...register("email", {
-                        required:
-                          "Введено невірну адресу ел. пошти або номер телефону",
+                      {...register('email', {
+                        required: 'Введено невірну адресу ел. пошти або номер телефону',
                         pattern: {
                           value: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
-                          message:
-                            "Введіть коректну ел. пошту або номер телефона",
+                          message: 'Введіть коректну ел. пошту або номер телефона',
                         },
                       })}
-                      type="email"
-                      id="auth_email"
                       className="input input_email"
+                      id="auth_email"
+                      type="email"
                     />
                     {errors?.email && (
                       <p className="error_message">
@@ -172,18 +157,18 @@ const ModalWindowRegestration = ({
                   <label className="form_label">Придумайте пароль</label>
                   <div className="form_row form_row_password">
                     <input
-                      {...register("password", {
-                        required: "Придумайте пароль",
+                      {...register('password', {
+                        required: 'Придумайте пароль',
                         minLength: {
                           value: 6,
-                          message: "Не менше 6 символів",
+                          message: 'Не менше 6 символів',
                         },
                       })}
-                      type={type}
-                      id="auth_password"
                       className="input input_password"
+                      id="auth_password"
+                      type={type}
                     />
-                    <button onClick={handleToggle} className="password_blind">
+                    <button className="password_blind" onClick={handleToggle}>
                       <i className={`fa-solid fa-${icon}`}></i>
                     </button>
                   </div>
@@ -206,17 +191,14 @@ const ModalWindowRegestration = ({
                   </div>
 
                   <div className="form_row button_center">
-                    <ButtonModalWindow
-                      entry="Зареєструватися"
-                      isValid={!isValid}
-                    />
+                    <ButtonModalWindow entry="Зареєструватися" isValid={!isValid} />
                     <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpenRegestration(false);
-                        setOpen(true);
-                      }}
                       className="button button_link_modal"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setOpenRegestration(false)
+                        setOpen(true)
+                      }}
                     >
                       Я вже зареєстрований
                     </button>
@@ -231,7 +213,7 @@ const ModalWindowRegestration = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ModalWindowRegestration;
+export default ModalWindowRegestration
