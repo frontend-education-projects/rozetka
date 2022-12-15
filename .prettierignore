@@ -1,0 +1,6 @@
+# Ignore artifacts:
+.layer0
+.next
+build
+coverage
+graphql.schema.json
