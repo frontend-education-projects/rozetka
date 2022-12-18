@@ -23,7 +23,6 @@ export const MainSlider = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="mySwiper"
         modules={[Navigation, Autoplay]}
         navigation={true}
         rewind={true}
@@ -32,7 +31,14 @@ export const MainSlider = () => {
         {SliderPhotoMassive.map(({ id, picture, pathPicture }: SliderPhotoProp) => (
           <SwiperSlide key={id}>
             <Link href={`${pathPicture}`}>
-              <Image alt="slide" height={400} placeholder="empty" src={`/sliderImg/${picture}.jpg`} width={1200} />
+              <Image
+                alt="slide"
+                height={400}
+                placeholder="empty"
+                priority={true}
+                src={`/sliderImg/${picture}.jpg`}
+                width={1200}
+              />
             </Link>
           </SwiperSlide>
         ))}
@@ -40,5 +46,3 @@ export const MainSlider = () => {
     </>
   )
 }
-
-export default MainSlider

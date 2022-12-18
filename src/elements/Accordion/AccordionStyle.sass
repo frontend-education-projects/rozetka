@@ -1,28 +1,28 @@
 .accordion_icon
-    display: flex
-    align-items: center
-    flex-direction: row
-    flex-shrink: 0
-    justify-content: center
-    padding: 0
-    width: 40px
-    background-color: hsla(0,0%,100%,.9)
-    color: var(--global-black)
-    font-size: 14px
-    cursor: pointer
-    height: 40px
+  display: flex
+  align-items: center
+  flex-direction: row
+  flex-shrink: 0
+  justify-content: center
+  padding: 0
+  width: 40px
+  background-color: hsla(0,0%,100%,.9)
+  color: var(--global-black)
+  font-size: 14px
+  cursor: pointer
+  height: 40px
 
 .accordion_arrow
-    transition: all .3s linear
+  transition: all .3s linear
 
 .accordion_arrow[aria-expanded="true"]
-    transform: rotateZ(180deg)
+  transform: rotateZ(180deg)
 
 .accordion_content
-    overflow: hidden
-    max-height: 1000px
-    transition: max-height 1s ease-in-out
+  overflow: hidden
+  max-height: 1000px
+  transition: max-height 1s ease-in-out
 
 .accordion_content[aria-expanded="true"]
-    max-height: 0px
-    transition: max-height 1s cubic-bezier(0, 1, 0, 1)
+  max-height: 0px
+  transition: max-height 1s cubic-bezier(0, 1, 0, 1)

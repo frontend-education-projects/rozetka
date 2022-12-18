@@ -1,6 +1,7 @@
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
-const AboutCompany = () => {
+export const AboutCompany = () => {
   return (
     <div className="footer_sidebar_links">
       <div className="footer_sidebar_heading">
@@ -8,20 +9,18 @@ const AboutCompany = () => {
       </div>
       <ul className="footer_sidebar_list">
         <li>
-          <a href="/">Про нас</a>
+          <Link href="/">Про нас</Link>
         </li>
         <li>
-          <a href="/">Умови використання</a>
+          <Link href="/">Умови використання</Link>
         </li>
         <li>
-          <a href="/">Контакти</a>
+          <Link href="/">Контакти</Link>
         </li>
         <li>
-          <a href="/">Усі категорії</a>
+          <Link href="/">Усі категорії</Link>
         </li>
       </ul>
     </div>
-  );
-};
-
-export default AboutCompany;
+  )
+}

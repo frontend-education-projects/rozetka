@@ -1,5 +1,5 @@
 import React from 'react'
-import EmptyCart from 'src/elements/EmptyCart/EmptyCart'
+import { EmptyCart } from 'src/elements/EmptyCart/EmptyCart'
 
 import styles from './ShopCart.module.sass'
 

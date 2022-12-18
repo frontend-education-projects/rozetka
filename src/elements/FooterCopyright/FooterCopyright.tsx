@@ -1,12 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
 
-import CopyrightText from './CopyrightText'
-import PaymentMastercard from './PaymentMastercard'
-import PaymentVisa from './PaymentVisa'
+import { CopyrightText } from './CopyrightText'
+import { PaymentMastercard } from './PaymentMastercard'
+import { PaymentVisa } from './PaymentVisa'
 
-const FooterCopyright = () => {
-  const [openCard, setOpenCard] = useState(false)
+export const FooterCopyright = () => {
   return (
     <>
       <div className="copyright_block">
@@ -21,5 +19,3 @@ const FooterCopyright = () => {
     </>
   )
 }
-
-export default FooterCopyright

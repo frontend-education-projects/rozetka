@@ -1,285 +1,288 @@
 .burger_holder
-    position: fixed
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    background-color: #00000080
-    transition: all 0.5s ease 0.2s
-    z-index: 10
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  background-color: #00000080
+  transition: all 0.5s ease 0.2s
+  z-index: 10
 
 .burger_window
-    position: static
-    display: flex
-    flex-direction: column
-    background-color: #fff
-    width: 100%
-    max-width: 320px
-    max-height: 100%
-    height: 100%
-    position: absolute
-    left: 50%
-    top: 0
-    pointer-events: auto
-    z-index: 1000
-    overflow-y: auto
-    box-shadow: 2px 0 6px #33333342
-    transition: all 1s ease
+  position: static
+  display: flex
+  flex-direction: column
+  background-color: #fff
+  width: 100%
+  max-width: 320px
+  max-height: 100%
+  height: 100%
+  position: absolute
+  left: 50%
+  top: 0
+  pointer-events: auto
+  z-index: 1000
+  overflow-y: auto
+  box-shadow: 2px 0 6px #33333342
+  transition: all 1s ease
 
 .burger_holder.animated_burger
-    opacity: 0
+  opacity: 0
+  visibility: hidden
+  .burger_window
     visibility: hidden
-    .burger_window
-        visibility: hidden
-        left: -100%
+    left: -100%
 
 .burger_holder.show_burger
-    opacity: 1
+  opacity: 1
+  visibility: visible
+  .burger_window
     visibility: visible
-    .burger_window
-        visibility: visible
-        left: 0
+    left: 0
 
 .burger_menu_header
-    display: flex
-    flex-direction: row
-    flex-shrink: 0
-    align-items: center
-    justify-content: space-between
-    padding: 8px 8px 8px 16px
-    background-color: var(--global-black)
+  display: flex
+  flex-direction: row
+  flex-shrink: 0
+  align-items: center
+  justify-content: space-between
+  padding: 8px 8px 8px 16px
+  background-color: var(--global-black)
 
-.burger_logo
-    vertical-align: middle
+.burger_menu_header img
+  vertical-align: middle
 
 .burger_close
-    display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: center
-    width: 40px
-    height: 40px
-    margin: 0
-    padding: 0
-    border: none
-    background: none
-    border-radius: 4px
-    color: #fff
-    cursor: pointer
-    transition: all 0.2s ease
-    &:hover
-        background-color: #ffffff0d
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  width: 40px
+  height: 40px
+  margin: 0
+  padding: 0
+  border: none
+  background: none
+  border-radius: 4px
+  color: #fff
+  cursor: pointer
+  transition: all 0.2s ease
+  &:hover
+    background-color: #ffffff0d
 
 .burger_menu_body
-    overflow: visible
+  overflow: visible
 
 .burger_menu_auth
-    padding: 8px
-    background-color: var(--global-black)
+  padding: 8px
+  background-color: var(--global-black)
 
 .burger_menu_auth_block
-    display: flex
-    column-gap: 16px
-    padding: 8px
-    align-items: center
+  display: flex
+  column-gap: 16px
+  padding: 8px
+  align-items: center
 
 .burger_menu_avatar
-    display: flex
-    flex-direction: row
-    flex-shrink: 0
-    align-items: center
-    justify-content: center
-    width: 40px
-    height: 40px
-    border-radius: 50%
-    background-color: #ffffff1a
-    font-size: 22px
-    color: #fff
+  display: flex
+  flex-direction: row
+  flex-shrink: 0
+  align-items: center
+  justify-content: center
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  background-color: #ffffff1a
+  font-size: 22px
+  color: #fff
 
 .burger_menu_auth_buttons
-    display: flex
-    flex-direction: row
-    align-items: center
-    margin-bottom: 4px
+  display: flex
+  flex-direction: row
+  align-items: center
+  margin-bottom: 4px
 
 .auth_button
-    border-radius: 0
-    font-size: 14px
-    color: #fff
-    cursor: pointer
-    padding: 0
-    &:first-child
-        padding-right: 16px
-    &:last-child
-        padding-left: 16px
-        border-left: 1px solid #fff
-    &:hover
-        text-decoration: underline
+  border-radius: 0
+  font-size: 14px
+  color: #fff
+  cursor: pointer
+  padding: 0
+  &:first-child
+    padding-right: 16px
+  &:last-child
+    padding-left: 16px
+    border-left: 1px solid #fff
+  &:hover
+    text-decoration: underline
 
 .auth_caption
-    overflow: hidden
-    text-overflow: ellipsis
-    font-size: 12px
-    color: #a6a5a5
-    margin: 0
-    line-height: 1.4
+  overflow: hidden
+  text-overflow: ellipsis
+  font-size: 12px
+  color: #a6a5a5
+  margin: 0
+  line-height: 1.4
 
 .burger_comeback
-    display: flex
-    flex-direction: row
-    align-items: center
-    height: 48px
-    padding-left: calc(var(--global-spacer) * 4)
-    padding-right: calc(var(--global-spacer) * 4)
-    background-color: var(--global-green)
-    font-size: var(--common-font-size)
-    font-weight: bold
-    text-transform: uppercase
+  display: flex
+  flex-direction: row
+  align-items: center
+  height: 48px
+  padding-left: calc(var(--global-spacer) * 4)
+  padding-right: calc(var(--global-spacer) * 4)
+  background-color: var(--global-green)
+  font-size: var(--common-font-size)
+  font-weight: bold
+  text-transform: uppercase
+  color: #fff
+  &:hover
+    text-decoration: none
     color: #fff
-    &:hover
-        text-decoration: none
-        color: #fff
 
 .comeback_shield
-    font-size: 23px
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 40px
-    height: 40px
-    margin-right: calc(var(--global-spacer) * 4)
+  font-size: 23px
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 40px
+  height: 40px
+  margin-right: calc(var(--global-spacer) * 4)
 
 .comeback_arrow
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 24px
-    height: 24px
-    margin-left: auto
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 24px
+  height: 24px
+  margin-left: auto
 
 .burger_menu_list
-    margin-top: 4px
-    overflow: hidden
+  margin-top: 4px
+  overflow: hidden
 
 .burger_menu_item
-    padding: 2px 8px
-    border-bottom: 1px solid #e9e9e9
+  padding: 2px 8px
+  border-bottom: 1px solid #e9e9e9
+
+.burger_menu_item a
+  text-decoration: none
 
 .border_zero
-    border: 0
+  border: 0
 
 .burger_menu_button
-    display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: flex-start
-    width: 100%
-    padding: 0 8px
-    background: none
-    font-size: 14px
-    height: 48px
-    border: 0
-    cursor: pointer
-    transition: all 0.3s ease
-    border-radius: 4px
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: flex-start
+  width: 100%
+  padding: 0 8px
+  background: none
+  font-size: 14px
+  height: 48px
+  border: 0
+  cursor: pointer
+  transition: all 0.3s ease
+  border-radius: 4px
+  color: var(--global-black)
+  font-weight: 400
+  &:hover
+    background-color: #d0ecdb
+    text-decoration: none
     color: var(--global-black)
-    font-weight: 400
-    &:hover
-        background-color: #d0ecdb
-        text-decoration: none
-        color: var(--global-black)
 
 .burger_menu_icon_button
-    display: flex
-    flex-direction: row
-    flex-shrink: 0
-    align-items: center
-    justify-content: center
-    width: 40px
-    height: 40px
-    font-size: 20px
-    margin-right: 16px
-    border-radius: 50%
-    background-color: #f5f5f5
-    transition: all .3s ease-in-out
+  display: flex
+  flex-direction: row
+  flex-shrink: 0
+  align-items: center
+  justify-content: center
+  width: 40px
+  height: 40px
+  font-size: 20px
+  margin-right: 16px
+  border-radius: 50%
+  background-color: #f5f5f5
+  transition: all .3s ease-in-out
 
 .burger_menu_button:hover .burger_menu_icon_button
-    background-color: #d0ecdb
+  background-color: #d0ecdb
 
 .chat_button
+  color: #00a046
+  &:hover
     color: #00a046
-    &:hover
-        color: #00a046
 
 .burger_menu_switch
-    display: flex
-    flex-direction: row
-    align-items: center
-    height: 48px
-    margin: 8px 0
-    padding: 0 8px
+  display: flex
+  flex-direction: row
+  align-items: center
+  height: 48px
+  margin: 8px 0
+  padding: 0 8px
 
 .burger_menu_switch_label
-    margin: 0
-    width: 75px
-    font-size: 14px
-    color: var(--global-black-60)
+  margin: 0
+  width: 75px
+  font-size: 14px
+  color: var(--global-black-60)
 
 .burger_lang_list
-    display: flex
-    flex-direction: row
-    align-items: center
+  display: flex
+  flex-direction: row
+  align-items: center
 
 .lang_space
-    margin-left: 8px
+  margin-left: 8px
 
-.lang_link
-    display: inline-flex
-    padding: 0 12px
-    border: solid 1px var(--global-black-10)
-    border-radius: 4px
-    font-size: 14px
-    line-height: 32px
-    color: var(--global-black)
-    align-items: center
-    &:hover
-        border-color: #00a046
-        color: var(--global-black)
-        text-decoration: none
-
-.lang_link_active
+.lang_link a
+  display: inline-flex
+  padding: 0 12px
+  border: solid 1px var(--global-black-10)
+  border-radius: 4px
+  font-size: 14px
+  line-height: 32px
+  color: var(--global-black)
+  align-items: center
+  &:hover
     border-color: #00a046
-    background-color: #e5f5ec
+    color: var(--global-black)
+    text-decoration: none
 
-.lang_icon
-    padding-right: 8px
+.lang_link_active a
+  border-color: #00a046
+  background-color: #e5f5ec
+
+.lang_link img
+  padding-right: 8px
 
 .burger_menu_city_toggle
-    flex: 1
+  flex: 1
 
 .city_toggle
-    display: grid
-    grid-template-columns: repeat(2,auto)
-    align-items: center
-    padding: 0
-    font-size: 14px
+  display: grid
+  grid-template-columns: repeat(2,auto)
+  align-items: center
+  padding: 0
+  font-size: 14px
 
 .city_toggle_text
-    overflow: hidden
-    white-space: nowrap
-    text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
 
 .city_toggle_arrow
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 24px
-    height: 24px
-    margin-left: 12px
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 24px
+  height: 24px
+  margin-left: 12px
 
 .apps_store
-    padding: 16px 24px
-    border-bottom: 1px solid var(--global-black-10)
+  padding: 16px 24px
+  border-bottom: 1px solid var(--global-black-10)
 
 .app_store_burger
-    padding: 16px 12px
+  padding: 16px 12px

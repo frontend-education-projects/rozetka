@@ -1,33 +1,28 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from 'react'
 
 type accordionProp = {
-  accordionTitle: string;
-  children: ReactNode;
-};
+  accordionTitle: string
+  children: ReactNode
+}
 
-const CustomAccordion = ({ accordionTitle, children }: accordionProp) => {
-  const [openAccordion, setOpenAccordion] = useState(false);
+export const CustomAccordion = ({ accordionTitle, children }: accordionProp) => {
+  const [openAccordion, setOpenAccordion] = useState(false)
 
-  let toggleHendler = (e: any) => {
-    setOpenAccordion(!openAccordion);
-  };
+  const toggleHendler = () => {
+    setOpenAccordion(!openAccordion)
+  }
 
   return (
     <div className="footer_sidebar_links">
       <div className="footer_sidebar_heading">
         <div className="footer_sidebar_title">{accordionTitle}</div>
-        <button onClick={toggleHendler} className="button accordion_icon">
-          <i
-            className="accordion_arrow fa-solid fa-chevron-down"
-            aria-expanded={openAccordion}
-          ></i>
+        <button className="button accordion_icon" onClick={toggleHendler}>
+          <i aria-expanded={openAccordion} className="accordion_arrow fa-solid fa-chevron-down"></i>
         </button>
       </div>
-      <div className="accordion_content" aria-expanded={!openAccordion}>
+      <div aria-expanded={!openAccordion} className="accordion_content">
         {children}
       </div>
     </div>
-  );
-};
-
-export default CustomAccordion;
+  )
+}

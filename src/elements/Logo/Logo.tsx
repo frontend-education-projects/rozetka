@@ -1,20 +1,17 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./Logo.module.sass";
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+
+import styles from './Logo.module.sass'
 
 export const Logo = () => {
   return (
-    <Link href="/" className={styles.logo}>
-      <Image
-        width={240}
-        height={40}
-        src="/Logo/logo.svg"
-        alt="Rozetka"
-        placeholder="empty"
-      />
-    </Link>
-  );
-};
-
-export default Logo;
+    <>
+      <div className={styles.logo}>
+        <Link href="/">
+          <Image alt="Rozetka" height={40} placeholder="empty" priority={true} src="/Logo/logo.svg" width={240} />
+        </Link>
+      </div>
+    </>
+  )
+}

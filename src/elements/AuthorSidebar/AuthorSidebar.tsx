@@ -7,7 +7,7 @@ type propAuth = {
   children: ReactNode
 }
 
-const AuthorSidebar = ({ children }: propAuth) => {
+export const AuthorSidebar = ({ children }: propAuth) => {
   return (
     <div className={styles.auth_wrapper}>
       <div className={styles.main_auth}>
@@ -18,5 +18,3 @@ const AuthorSidebar = ({ children }: propAuth) => {
     </div>
   )
 }
-
-export default AuthorSidebar

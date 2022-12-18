@@ -1,31 +1,16 @@
-import { Html, Head, Main, NextScript } from "next/document";
+/* eslint-disable @next/next/no-sync-scripts */
+import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
     <Html>
       <Head>
-        <title>RozetkaUA-home-project</title>
-        <script
-          src="https://kit.fontawesome.com/699e6f5ea8.js"
-          crossOrigin="anonymous"
-        ></script>
+        <script crossOrigin="anonymous" src="https://kit.fontawesome.com/699e6f5ea8.js"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
         <link
-          rel="preload"
-          href="https://design.rozetka.com.ua/assets/fonts/RozetkaWeb-Regular.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin=""
-        />
-        <script
-          src="https://kit.fontawesome.com/699e6f5ea8.js"
-          crossOrigin="anonymous"
-        ></script>
-        <link
-          rel="preload"
-          href="https://design.rozetka.com.ua/assets/fonts/RozetkaWeb-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
         />
       </Head>
       <body>
@@ -33,5 +18,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  );
+  )
 }

@@ -1,10 +1,11 @@
-import React from "react";
-import AboutCompany from "./AboutCompany";
-import Help from "./Help";
-import Partners from "./Partners";
-import Servises from "./Servises";
+import React from 'react'
 
-const FooterSidebar = () => {
+import { AboutCompany } from './AboutCompany'
+import { Help } from './Help'
+import { Partners } from './Partners'
+import { Servises } from './Servises'
+
+export const FooterSidebar = () => {
   return (
     <div className="footer_sidebar_block">
       <AboutCompany />
@@ -12,7 +13,5 @@ const FooterSidebar = () => {
       <Servises />
       <Partners />
     </div>
-  );
-};
-
-export default FooterSidebar;
+  )
+}

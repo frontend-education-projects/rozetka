@@ -1,6 +1,7 @@
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
-const Partners = () => {
+export const Partners = () => {
   return (
     <div className="footer_sidebar_links border_zero">
       <div className="footer_sidebar_heading">
@@ -8,20 +9,18 @@ const Partners = () => {
       </div>
       <ul className="footer_sidebar_list">
         <li>
-          <a href="/">Продавати на Розетці</a>
+          <Link href="/">Продавати на Розетці</Link>
         </li>
         <li>
-          <a href="/">Співпраця з нами</a>
+          <Link href="/">Співпраця з нами</Link>
         </li>
         <li>
-          <a href="/">Франчайзинг</a>
+          <Link href="/">Франчайзинг</Link>
         </li>
         <li>
-          <a href="/">Оренда приміщень</a>
+          <Link href="/">Оренда приміщень</Link>
         </li>
       </ul>
     </div>
-  );
-};
-
-export default Partners;
+  )
+}

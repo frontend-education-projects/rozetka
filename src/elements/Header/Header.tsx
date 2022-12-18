@@ -1,7 +1,7 @@
 import React from 'react'
 import { Burger } from 'src/elements/Burger/Burger'
 import { Catalog } from 'src/elements/header_Catalog/Catalog'
-import HeaderActions from 'src/elements/HeaderActions/HeaderActions'
+import { HeaderActions } from 'src/elements/HeaderActions/HeaderActions'
 import { Logo } from 'src/elements/Logo/Logo'
 import { Input } from 'src/elements/Search-bar/Input'
 
@@ -20,5 +20,3 @@ export const Header = () => {
     </header>
   )
 }
-
-export default Header

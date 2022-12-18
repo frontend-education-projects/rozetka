@@ -1,36 +1,35 @@
-import React, { ReactNode } from "react";
+import React from 'react'
 
-type propCopyrightModalWindow = {
-  text: string;
-  content: string;
-  openCard: any;
-  setOpenCard: any;
-};
+type CopyrightModalWindowProps = {
+  text: string
+  content: string
+  openCard: boolean
+  setOpenCard: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-const CopyrightModalWindow = ({
-  text,
-  content,
-  openCard,
-  setOpenCard,
-}: propCopyrightModalWindow) => {
+export const CopyrightModalWindow = ({ text, content, openCard, setOpenCard }: CopyrightModalWindowProps) => {
+  const handlerCloseCardWindow = () => {
+    setOpenCard(false)
+  }
+
+  const handlerStopPropagationCardWindow = (e: React.MouseEvent) => {
+    e.stopPropagation()
+  }
+
+  const handlerCloseXCardWindow = () => {
+    setOpenCard(false)
+  }
+
   return (
     <>
       <div
-        onClick={() => setOpenCard(false)}
-        className={`modal_holder_cards animated_cards ${
-          openCard ? "show_cards" : ""
-        } `}
+        className={`modal_holder_cards animated_cards ${openCard ? 'show_cards' : ''} `}
+        onClick={handlerCloseCardWindow}
       >
-        <div
-          className="modal_window_cards"
-          onClick={(e) => e.stopPropagation()}
-        >
+        <div className="modal_window_cards" onClick={handlerStopPropagationCardWindow}>
           <div className="modal_header_cards">
             <div className="modal_heading_cards">{text}</div>
-            <button
-              onClick={() => setOpenCard(false)}
-              className="modal_close_cards"
-            >
+            <button className="modal_close_cards" onClick={handlerCloseXCardWindow}>
               X
             </button>
           </div>
@@ -40,7 +39,5 @@ const CopyrightModalWindow = ({
         </div>
       </div>
     </>
-  );
-};
-
-export default CopyrightModalWindow;
+  )
+}

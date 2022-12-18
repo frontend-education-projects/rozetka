@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import AuthModalSocials from 'src/elements/AuthModalSocials/AuthModalSocials'
+import { AuthModalSocials } from 'src/elements/AuthModalSocials/AuthModalSocials'
 
-import ButtonModalWindow from './ButtonModalWindow'
+import { ButtonModalWindow } from './ButtonModalWindow'
 
 type regestrationProp = {
-  openRegestration: any
-  setOpenRegestration: any
-  setOpen: any
+  openRegestration: boolean
+  setOpenRegestration: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface IFormsValid {
@@ -18,18 +19,17 @@ interface IFormsValid {
   password: string
 }
 
-const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpen }: regestrationProp) => {
+export const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpen }: regestrationProp) => {
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
     reset,
-    setValue,
   } = useForm<IFormsValid>({
     mode: 'onBlur',
   })
 
-  const onSubmit: SubmitHandler<IFormsValid> = (data: any) => {
+  const onSubmit: SubmitHandler<IFormsValid> = (data: IFormsValid) => {
     alert(JSON.stringify(data))
     reset()
   }
@@ -48,16 +48,34 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
     }
   }
 
+  const handlerCloseRegestrationWindow = () => {
+    setOpenRegestration(false)
+  }
+
+  const handlerStopPropagationWindow = (e: React.MouseEvent) => {
+    e.stopPropagation()
+  }
+
+  const handlerCloseXRegestrationWindow = () => {
+    setOpenRegestration(false)
+  }
+
+  const handlerAllreadyRegister = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setOpenRegestration(false)
+    setOpen(true)
+  }
+
   return (
     <>
       <div
         className={`modal_holder animated ${openRegestration ? 'show' : ''} `}
-        onClick={() => setOpenRegestration(false)}
+        onClick={handlerCloseRegestrationWindow}
       >
-        <div className="modal_window" onClick={(e) => e.stopPropagation()}>
+        <div className="modal_window" onClick={handlerStopPropagationWindow}>
           <div className="modal_header">
             <div className="modal_heading">Реєстрація</div>
-            <button className="modal_close" onClick={() => setOpenRegestration(false)}>
+            <button className="modal_close" onClick={handlerCloseXRegestrationWindow}>
               X
             </button>
           </div>
@@ -66,7 +84,7 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
               <form className="auth_modal_form" onSubmit={handleSubmit(onSubmit)}>
                 <fieldset className="reset_fieldset">
                   <div className="form_row">
-                    <label className="form_label">Ім'я</label>
+                    <label className="form_label">Ім`я</label>
                     <input
                       {...register('firstname', {
                         required: "Введіть своє ім'я кирилицею",
@@ -76,7 +94,6 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
                         },
                       })}
                       className="input input_email"
-                      id="auth_name"
                       type="text"
                     />
                     {errors?.firstname && (
@@ -98,7 +115,6 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
                         },
                       })}
                       className="input "
-                      id="auth_lastname"
                       type="text"
                     />
                     {errors?.lastname && (
@@ -115,12 +131,12 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
                       {...register('phone', {
                         required: 'Введіть номер мобільного телефону',
                         pattern: {
+                          // eslint-disable-next-line no-useless-escape
                           value: /((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))/g,
                           message: 'Введіть коректний номер мобільного телефону',
                         },
                       })}
                       className="input"
-                      id="auth_phone"
                       placeholder="+380"
                       type="phone"
                     />
@@ -143,7 +159,6 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
                         },
                       })}
                       className="input input_email"
-                      id="auth_email"
                       type="email"
                     />
                     {errors?.email && (
@@ -165,7 +180,6 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
                         },
                       })}
                       className="input input_password"
-                      id="auth_password"
                       type={type}
                     />
                     <button className="password_blind" onClick={handleToggle}>
@@ -181,25 +195,18 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
 
                   <div className="form_cation">
                     Реєструючись, ви погоджуєтеся з
-                    <a className="caption_link" href="/">
+                    <a className="caption_link" href="/" target="_blank">
                       умовами положення про обробку і захист персональних даних
                     </a>
                     та
-                    <a className="caption_link" href="/">
+                    <a className="caption_link" href="/" target="_blank">
                       угодою користувача
                     </a>
                   </div>
 
                   <div className="form_row button_center">
                     <ButtonModalWindow entry="Зареєструватися" isValid={!isValid} />
-                    <button
-                      className="button button_link_modal"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        setOpenRegestration(false)
-                        setOpen(true)
-                      }}
-                    >
+                    <button className="button button_link_modal" onClick={handlerAllreadyRegister}>
                       Я вже зареєстрований
                     </button>
                   </div>
@@ -215,5 +222,3 @@ const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpe
     </>
   )
 }
-
-export default ModalWindowRegestration
