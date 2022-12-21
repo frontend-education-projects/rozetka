@@ -14,7 +14,7 @@ import { SocialsLinks } from '../../pages/api/data/sidebarCategoiesMassive'
 
 type BurgerProp = {
   openBurgerMenu: boolean
-  setOpenBurgerMenu: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenBurgerMenu: React.Dispatch<React.SetStateAction<boolean>> // TODO: refactor - type function handler () => void
   open: boolean
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   openRemindePass: boolean
@@ -29,13 +29,14 @@ export const BurgerMenu = ({
   openBurgerMenu,
   setOpenBurgerMenu,
   setOpen,
-  setOpenRegestration,
+  setOpenRegestration, // TODO: refactor naming
   setOpenWindowCity,
 }: BurgerProp) => {
   const handlerCloseBurgerMenu = () => {
     setOpenBurgerMenu(false)
   }
 
+  // TODO: refactor naming
   const hendlerStopPropagationMenu = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
@@ -50,6 +51,7 @@ export const BurgerMenu = ({
     setOpen(true)
   }
 
+  // TODO: refactor naming - handleOpenRegistrationWindow
   const hendlerOpenRegestrationWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenBurgerMenu(false)
@@ -98,6 +100,7 @@ export const BurgerMenu = ({
               </div>
             </div>
             <a className="burger_comeback" href="https://savelife.in.ua/donate/">
+              {/* TODO: collapse empty tag */}
               <i className="comeback_shield fa-solid fa-shield-heart"></i> Повернись живим
               <i className="comeback_arrow fa-solid fa-chevron-right"></i>
             </a>

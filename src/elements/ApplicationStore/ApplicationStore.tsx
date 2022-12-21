@@ -9,6 +9,7 @@ type appStoreProp = {
 
 export const ApplicationStore = ({ appClass }: appStoreProp) => {
   return (
+    // TODO: replace with clsx library
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     <div className={`apps_store ${appClass}`}>
       <div className={styles.store_title}>Встановлюй наші додатки</div>

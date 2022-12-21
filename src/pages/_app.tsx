@@ -1,3 +1,4 @@
+// TODO: move styles to the appropriate components
 import '../styles/global.sass'
 import '../styles/globalReset.sass'
 import '../elements/ModalWindowReg/ModalWindow.sass'

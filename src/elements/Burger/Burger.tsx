@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+// TODO: create import alias
 import { ModalWindow } from 'src/elements/ModalWindowReg/ModalWindow'
 
 import styles from './Burger.module.sass'
