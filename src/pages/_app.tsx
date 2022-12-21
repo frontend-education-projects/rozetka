@@ -10,6 +10,7 @@ import '../elements/Burger/BurgerMenu.sass'
 import '../elements/Burger/BurgerModalWindowCityStyle.sass'
 import '../elements/Accordion/AccordionStyle.sass'
 import '../elements/MainSlider/MainSliderStyle.sass'
+import '../elements/Typography/Typography.sass'
 
 import type { AppProps } from 'next/app'
 import React from 'react'
