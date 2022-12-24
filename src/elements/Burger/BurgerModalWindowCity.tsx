@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { TypographyCustom } from '../Typography/TypographyCustom'
+
 type ModalWindowCity = {
   openWindowCity: boolean
   setOpenWindowCity: React.Dispatch<React.SetStateAction<boolean>>
@@ -27,7 +29,7 @@ export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: Mod
       >
         <div className="modal_city_window" onClick={hendlerStopPropagationCity}>
           <div className="modal_city_header">
-            <div className="modal_city_heading">Виберіть своє місто</div>
+            <TypographyCustom tag="h3" typographyText="Виберіть своє місто" />
             <button className="modal_city_close" onClick={hendlerCloseCityWindow}>
               X
             </button>

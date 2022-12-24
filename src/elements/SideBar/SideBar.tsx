@@ -40,10 +40,6 @@ export const SideBar = ({ sidebarLinks }: sidebarLinks) => {
     return null
   }
 
-  const handlerOpenMainWindow = () => {
-    setOpen(true)
-  }
-
   return (
     <>
       <ModalWindow
@@ -101,11 +97,7 @@ export const SideBar = ({ sidebarLinks }: sidebarLinks) => {
         </div>
 
         {/* author */}
-        <AuthorSidebar>
-          <button className={styles.btn_auth} onClick={handlerOpenMainWindow} type="button">
-            Увійдіть в особистий кабінет
-          </button>
-        </AuthorSidebar>
+        <AuthorSidebar setOpen={setOpen} />
 
         {/* apps */}
         <ApplicationStore />

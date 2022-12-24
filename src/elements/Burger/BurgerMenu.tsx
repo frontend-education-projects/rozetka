@@ -36,8 +36,8 @@ export const BurgerMenu = ({
     setOpenBurgerMenu(false)
   }
 
-  // TODO: refactor naming
-  const hendlerStopPropagationMenu = (e: React.MouseEvent) => {
+  // TODO: refactor naming(FIXED)
+  const handlerStopPropagationMenu = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
 
@@ -45,20 +45,20 @@ export const BurgerMenu = ({
     setOpenBurgerMenu(false)
   }
 
-  const hendlerOpenModalWindow = (e: React.MouseEvent) => {
+  const handlerOpenModalWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenBurgerMenu(false)
     setOpen(true)
   }
 
-  // TODO: refactor naming - handleOpenRegistrationWindow
-  const hendlerOpenRegestrationWindow = (e: React.MouseEvent) => {
+  // TODO: refactor naming - handleOpenRegistrationWindow(FIXED)
+  const handleOpenRegestrationWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenBurgerMenu(false)
     setOpenRegestration(true)
   }
 
-  const hendlerOpenCityWindow = (e: React.MouseEvent) => {
+  const handlerOpenCityWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenWindowCity(true)
     setOpenBurgerMenu(false)
@@ -70,7 +70,7 @@ export const BurgerMenu = ({
         className={`burger_holder animated_burger ${openBurgerMenu ? 'show_burger' : ''} `}
         onClick={handlerCloseBurgerMenu}
       >
-        <div className="burger_window" onClick={hendlerStopPropagationMenu}>
+        <div className="burger_window" onClick={handlerStopPropagationMenu}>
           <div className="burger_menu_header">
             <Link href="/" onClick={handlerCloseBurgerMenu}>
               <Image alt="Rozetka" height={24} placeholder="empty" src="/Logo/logo.svg" width={144} />
@@ -88,10 +88,10 @@ export const BurgerMenu = ({
                 </div>
                 <div className="burger_menu_auth_content">
                   <div className="burger_menu_auth_buttons">
-                    <button className="button auth_button" onClick={hendlerOpenModalWindow}>
+                    <button className="button auth_button" onClick={handlerOpenModalWindow}>
                       Вхід
                     </button>
-                    <button className="button auth_button" onClick={hendlerOpenRegestrationWindow}>
+                    <button className="button auth_button" onClick={handleOpenRegestrationWindow}>
                       Реєстрація
                     </button>
                   </div>
@@ -101,7 +101,8 @@ export const BurgerMenu = ({
             </div>
             <a className="burger_comeback" href="https://savelife.in.ua/donate/">
               {/* TODO: collapse empty tag */}
-              <i className="comeback_shield fa-solid fa-shield-heart"></i> Повернись живим
+              <i className="comeback_shield fa-solid fa-shield-heart"></i>
+              Повернись живим
               <i className="comeback_arrow fa-solid fa-chevron-right"></i>
             </a>
 
@@ -163,7 +164,7 @@ export const BurgerMenu = ({
                 <div className="burger_menu_switch">
                   <p className="burger_menu_switch_label">Місто</p>
                   <div className="burger_menu_city_toggle">
-                    <button className="button city_toggle" onClick={hendlerOpenCityWindow}>
+                    <button className="button city_toggle" onClick={handlerOpenCityWindow}>
                       <span className="city_toggle_text">Умань</span>
                       <i className="city_toggle_arrow fa-solid fa-chevron-down"></i>
                     </button>
