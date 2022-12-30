@@ -48,8 +48,12 @@ export const Home = () => {
                 ))}
               </MainSlider>
 
-              <TypographyCustom tag="h2" typographyText="Більше товарів для вибору" />
-              <TypographyCustom tag="h1" typographyText="Ноутбуки та комп'ютери" />
+              <TypographyCustom component="h2" variant="h2">
+                Більше товарів для вибору
+              </TypographyCustom>
+              <TypographyCustom component="h1" variant="h1">
+                Ноутбуки та комп`ютери
+              </TypographyCustom>
             </div>
           </div>
         </div>

@@ -1,16 +1,18 @@
-import React from 'react'
+/* eslint-disable react/forbid-component-props */
+import React, { ReactNode } from 'react'
 
 type TypographyCustomProps = {
-  typographyText: string
-  tag: keyof JSX.IntrinsicElements
+  children: ReactNode
+  component: keyof JSX.IntrinsicElements
+  variant: string
 }
 
-export const TypographyCustom = ({ typographyText, tag }: TypographyCustomProps) => {
-  const Tag = tag || 'h1'
+export const TypographyCustom = ({ children, component, variant }: TypographyCustomProps) => {
+  const Component = component || 'h1'
 
   return (
-    <div className="typography">
-      <Tag>{typographyText}</Tag>
-    </div>
+    <>
+      <Component className={`typography typography-${variant}`}>{children}</Component>
+    </>
   )
 }
