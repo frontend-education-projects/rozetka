@@ -4,7 +4,6 @@ import Link from 'next/link'
 import React from 'react'
 import { MainSlider } from 'src/elements/MainSlider/MainSlider'
 import { SideBar } from 'src/elements/SideBar/SideBar'
-import { TypographyCustom } from 'src/elements/Typography/TypographyCustom'
 import { SwiperSlide } from 'swiper/react'
 
 import { sidebarLinks } from './api/data/sidebarCategoiesMassive'
@@ -47,13 +46,6 @@ export const Home = () => {
                   </SwiperSlide>
                 ))}
               </MainSlider>
-
-              <TypographyCustom component="h2" variant="h2">
-                Більше товарів для вибору
-              </TypographyCustom>
-              <TypographyCustom component="h1" variant="h1">
-                Ноутбуки та комп`ютери
-              </TypographyCustom>
             </div>
           </div>
         </div>
