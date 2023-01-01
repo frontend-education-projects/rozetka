@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import {} from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
@@ -33,7 +34,7 @@ export const SocialsMain = ({ SocialsLinks, socialsClass }: SocialsLinksProps) =
         {SocialsLinks.map(({ id, classSoc, socIcon, socPath }: SocialsLinksInfoProps) => (
           <li className="socials_list_item" key={id}>
             <a className={`socials_link socials_${classSoc}`} href={socPath} rel="noreferrer" target="_blank">
-              <i className={`fa-brands fa-${socIcon}`}></i>
+              <i className={`fa-brands fa-${socIcon}`} />
             </a>
           </li>
         ))}

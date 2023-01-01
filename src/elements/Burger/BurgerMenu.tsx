@@ -11,6 +11,7 @@ import { Help } from 'src/elements/FooterSidebarElements/Help'
 import { SocialsMain } from 'src/elements/Socials/SocialsMain'
 
 import { SocialsLinks } from '../../pages/api/data/sidebarCategoiesMassive'
+import styles from '../FooterSidebarElements/FooterSidebar.module.sass'
 
 type BurgerProp = {
   openBurgerMenu: boolean
@@ -100,10 +101,10 @@ export const BurgerMenu = ({
               </div>
             </div>
             <a className="burger_comeback" href="https://savelife.in.ua/donate/">
-              {/* TODO: collapse empty tag */}
-              <i className="comeback_shield fa-solid fa-shield-heart"></i>
+              {/* TODO: collapse empty tag(FIXED) */}
+              <i className="comeback_shield fa-solid fa-shield-heart" />
               Повернись живим
-              <i className="comeback_arrow fa-solid fa-chevron-right"></i>
+              <i className="comeback_arrow fa-solid fa-chevron-right" />
             </a>
 
             <ul className="burger_menu_list">
@@ -175,7 +176,7 @@ export const BurgerMenu = ({
                 <AboutCompany />
                 <Help />
                 <CustomAccordion accordionTitle={'Сервіси'}>
-                  <ul className="footer_sidebar_list">
+                  <ul className={styles.footer_sidebar_list}>
                     <li>
                       <Link href="/">Бонусний рахунок</Link>
                     </li>
@@ -194,7 +195,7 @@ export const BurgerMenu = ({
                   </ul>
                 </CustomAccordion>
                 <CustomAccordion accordionTitle={'Партнерам'}>
-                  <ul className="footer_sidebar_list">
+                  <ul className={styles.footer_sidebar_list}>
                     <li>
                       <Link href="/">Продавати на Розетці</Link>
                     </li>

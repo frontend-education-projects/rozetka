@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { AuthModalSocials } from 'src/elements/AuthModalSocials/AuthModalSocials'
 
-import { TypographyCustom } from '../Typography/TypographyCustom'
 import { ButtonModalWindow } from './ButtonModalWindow'
 import { ModalWindowRegestration } from './ModalWindowRegestration'
 import { ModalWindowRemindPass } from './ModalWindowRemindPass'
@@ -96,7 +95,7 @@ export const ModalWindow = ({
       <div className={`modal_holder animated ${open ? 'show' : ''} `} onClick={handlerCloseModalWindow}>
         <div className="modal_window" onClick={handlerStopPropagationWindow}>
           <div className="modal_header">
-            <TypographyCustom tag="h3" typographyText="Вхід" />
+            <div className="modal_heading">Вхід</div>
             <button className="modal_close" onClick={handlerCloseXModalWindow}>
               X
             </button>

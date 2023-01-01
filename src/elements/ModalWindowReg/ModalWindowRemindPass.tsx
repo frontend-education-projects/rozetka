@@ -3,7 +3,6 @@ import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { AuthModalSocials } from 'src/elements/AuthModalSocials/AuthModalSocials'
 
-import { TypographyCustom } from '../Typography/TypographyCustom'
 import { ButtonModalWindow } from './ButtonModalWindow'
 
 type remindePassProp = {
@@ -50,7 +49,7 @@ export const ModalWindowRemindPass = ({ openRemindePass, setOpenRemindePass, set
       <div className={`modal_holder animated ${openRemindePass ? 'show' : ''} `} onClick={handlerCloseXWindow}>
         <div className="modal_window" onClick={handlerStopPropagationWindow}>
           <div className="modal_header">
-            <TypographyCustom tag="h3" typographyText="Вхід" />
+            <div className="modal_heading">Вхід</div>
             <button className="modal_close" onClick={handlerCloseXWindow}>
               X
             </button>

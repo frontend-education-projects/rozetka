@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
 
+import styles from './FooterSidebar.module.sass'
+
 export const Help = () => {
   return (
-    <div className="footer_sidebar_links">
-      <div className="footer_sidebar_heading">
-        <div className="footer_sidebar_title">Допомога</div>
+    <div className={styles.footer_sidebar_links}>
+      <div className={styles.footer_sidebar_heading}>
+        <div className={styles.footer_sidebar_title}>Допомога</div>
       </div>
-      <ul className="footer_sidebar_list">
+      <ul className={styles.footer_sidebar_list}>
         <li>
           <Link href="/">Доставка та оплата</Link>
         </li>

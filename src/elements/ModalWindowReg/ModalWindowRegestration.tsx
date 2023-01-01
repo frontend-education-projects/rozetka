@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { AuthModalSocials } from 'src/elements/AuthModalSocials/AuthModalSocials'
 
-import { TypographyCustom } from '../Typography/TypographyCustom'
 import { ButtonModalWindow } from './ButtonModalWindow'
 
 type regestrationProp = {
@@ -75,7 +74,7 @@ export const ModalWindowRegestration = ({ openRegestration, setOpenRegestration,
       >
         <div className="modal_window" onClick={handlerStopPropagationWindow}>
           <div className="modal_header">
-            <TypographyCustom tag="h3" typographyText="Реєстрація" />
+            <div className="modal_heading">Реєстрація</div>
             <button className="modal_close" onClick={handlerCloseXRegestrationWindow}>
               X
             </button>
