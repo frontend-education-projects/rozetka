@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 
 import {} from '@fortawesome/free-solid-svg-icons'
+import clsx from 'clsx'
 import React from 'react'
+
+import styles from './SocialsMain.module.sass'
 
 type MassiveSocialsLinksProps = {
   id: number
@@ -12,7 +15,7 @@ type MassiveSocialsLinksProps = {
 
 type SocialsLinksProps = {
   SocialsLinks: MassiveSocialsLinksProps[]
-  socialsClass?: string
+  socialsClass: string
 }
 
 type SocialsLinksInfoProps = {
@@ -28,12 +31,12 @@ export const SocialsMain = ({ SocialsLinks, socialsClass }: SocialsLinksProps) =
   }
 
   return (
-    <div className={`socials_sidebar_block ${socialsClass}`}>
-      <div className="socials_sidebar_heading">Ми в соціальних мережах</div>
-      <ul className="socials_list">
+    <div className={clsx(styles.socials_sidebar_block, styles[socialsClass])}>
+      <div className={styles.socials_sidebar_heading}>Ми в соціальних мережах</div>
+      <ul className={styles.socials_list}>
         {SocialsLinks.map(({ id, classSoc, socIcon, socPath }: SocialsLinksInfoProps) => (
-          <li className="socials_list_item" key={id}>
-            <a className={`socials_link socials_${classSoc}`} href={socPath} rel="noreferrer" target="_blank">
+          <li className={styles.socials_list_item} key={id}>
+            <a className={clsx(styles.socials_link, styles[classSoc])} href={socPath} rel="noreferrer" target="_blank">
               <i className={`fa-brands fa-${socIcon}`} />
             </a>
           </li>
