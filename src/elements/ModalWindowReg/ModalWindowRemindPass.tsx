@@ -5,7 +5,7 @@ import { AuthModalSocials } from 'src/elements/AuthModalSocials/AuthModalSocials
 
 import { ButtonModalWindow } from './ButtonModalWindow'
 
-type remindePassProp = {
+type ModalWindowRemindPassProps = {
   openRemindePass: boolean
   setOpenRemindePass: (isOpenRemindePass: boolean) => void
   setOpen: (isOpen: boolean) => void
@@ -15,7 +15,7 @@ interface IFormsValid {
   email: string
 }
 
-export const ModalWindowRemindPass = ({ openRemindePass, setOpenRemindePass, setOpen }: remindePassProp) => {
+export const ModalWindowRemindPass = ({ openRemindePass, setOpenRemindePass, setOpen }: ModalWindowRemindPassProps) => {
   const {
     register,
     formState: { errors, isValid },
@@ -30,11 +30,7 @@ export const ModalWindowRemindPass = ({ openRemindePass, setOpenRemindePass, set
     reset()
   }
 
-  const handlerStopPropagationWindow = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
-  const handlerCloseXWindow = () => {
+  const handleCloseWindow = () => {
     setOpenRemindePass(false)
   }
 
@@ -46,11 +42,11 @@ export const ModalWindowRemindPass = ({ openRemindePass, setOpenRemindePass, set
 
   return (
     <>
-      <div className={`modal_holder animated ${openRemindePass ? 'show' : ''} `} onClick={handlerCloseXWindow}>
-        <div className="modal_window" onClick={handlerStopPropagationWindow}>
+      <div className={`modal_holder animated ${openRemindePass ? 'show' : ''} `} onClick={handleCloseWindow}>
+        <div className="modal_window" onClick={(e) => e.stopPropagation()}>
           <div className="modal_header">
             <div className="modal_heading">Вхід</div>
-            <button className="modal_close" onClick={handlerCloseXWindow}>
+            <button className="modal_close" onClick={handleCloseWindow}>
               X
             </button>
           </div>

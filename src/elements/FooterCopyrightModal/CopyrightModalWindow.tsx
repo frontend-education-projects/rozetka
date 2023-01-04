@@ -15,10 +15,6 @@ export const CopyrightModalWindow = ({ text, content, openCard, setOpenCard }: C
     setOpenCard(false)
   }
 
-  const handleStopPropagationCardWindow = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
   const handleCloseXCardWindow = () => {
     setOpenCard(false)
   }
@@ -29,7 +25,7 @@ export const CopyrightModalWindow = ({ text, content, openCard, setOpenCard }: C
         className={clsx(styles.modal_holder_cards, styles.animated_cards, openCard ? styles.show_cards : '')}
         onClick={handleCloseCardWindow}
       >
-        <div className={styles.modal_window_cards} onClick={handleStopPropagationCardWindow}>
+        <div className={styles.modal_window_cards} onClick={(e) => e.stopPropagation()}>
           <div className={styles.modal_header_cards}>
             <div className={styles.modal_heading_cards}>{text}</div>
             <button className={styles.modal_close_cards} onClick={handleCloseXCardWindow}>

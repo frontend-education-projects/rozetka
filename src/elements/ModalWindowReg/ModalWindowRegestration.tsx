@@ -56,10 +56,6 @@ export const ModalWindowRegestration = ({
     setOpenRegestration(false)
   }
 
-  const handleStopPropagationWindow = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
   const handleAllreadyRegister = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenRegestration(false)
@@ -72,7 +68,7 @@ export const ModalWindowRegestration = ({
         className={`modal_holder animated ${openRegestration ? 'show' : ''} `}
         onClick={handleCloseRegestrationWindow}
       >
-        <div className="modal_window" onClick={handleStopPropagationWindow}>
+        <div className="modal_window" onClick={(e) => e.stopPropagation()}>
           <div className="modal_header">
             <div className="modal_heading">Реєстрація</div>
             <button className="modal_close" onClick={handleCloseRegestrationWindow}>

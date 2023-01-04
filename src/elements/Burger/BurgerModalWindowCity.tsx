@@ -14,10 +14,6 @@ export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: Mod
     setOpenWindowCity(false)
   }
 
-  const handleStopPropagationCity = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
   const handleCloseCityWindowAccept = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenWindowCity(false)
@@ -28,7 +24,7 @@ export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: Mod
         className={clsx(styles.modal_city_holder, styles.animated_city, openWindowCity ? styles.show_city : '')}
         onClick={handleCloseCityWindow}
       >
-        <div className={styles.modal_city_window} onClick={handleStopPropagationCity}>
+        <div className={styles.modal_city_window} onClick={(e) => e.stopPropagation()}>
           <div className={styles.modal_city_header}>
             <div className={styles.modal_city_heading}>Виберіть своє місто</div>
             <button className={styles.modal_city_close} onClick={handleCloseCityWindow}>

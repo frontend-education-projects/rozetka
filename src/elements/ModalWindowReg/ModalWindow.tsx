@@ -61,10 +61,6 @@ export const ModalWindow = ({
     setOpen(false)
   }
 
-  const handleStopPropagationWindow = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
   const handleOpenRemindeWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenRemindePass(true)
@@ -89,7 +85,7 @@ export const ModalWindow = ({
         setOpenRegestration={setOpenRegestration}
       />
       <div className={`modal_holder animated ${open ? 'show' : ''} `} onClick={handleCloseModalWindow}>
-        <div className="modal_window" onClick={handleStopPropagationWindow}>
+        <div className="modal_window" onClick={(e) => e.stopPropagation()}>
           <div className="modal_header">
             <div className="modal_heading">Вхід</div>
             <button className="modal_close" onClick={handleCloseModalWindow}>

@@ -4,11 +4,11 @@ import React from 'react'
 
 import styles from './ApplicationStore.module.sass'
 
-type appStoreProps = {
+type AppStoreProp = {
   appClass?: string
 }
 
-export const ApplicationStore = ({ appClass }: appStoreProps) => {
+export const ApplicationStore = ({ appClass }: AppStoreProp) => {
   return (
     <div className={clsx(styles.apps_store, styles[appClass || ''])}>
       <div className={styles.store_title}>Встановлюй наші додатки</div>
