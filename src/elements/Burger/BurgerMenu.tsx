@@ -13,17 +13,17 @@ import { SocialsMain } from 'src/elements/Socials/SocialsMain'
 import { SocialsLinks } from '../../pages/api/data/sidebarCategoiesMassive'
 import styles from '../FooterSidebarElements/FooterSidebar.module.sass'
 
-type BurgerProp = {
+type BurgerProps = {
   openBurgerMenu: boolean
-  setOpenBurgerMenu: React.Dispatch<React.SetStateAction<boolean>> // TODO: refactor - type function handler () => void
+  setOpenBurgerMenu: (isOpenBurgerMenu: boolean) => void // TODO: refactor - type function handler () => void
   open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: (isOpen: boolean) => void
   openRemindePass: boolean
-  setOpenRemindePass: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRemindePass: (isOpenRemindePass: boolean) => void
   openRegestration: boolean
-  setOpenRegestration: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRegestration: (isOpenRegestration: boolean) => void
   openWindowCity: boolean
-  setOpenWindowCity: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenWindowCity: (isOpenWindowCity: boolean) => void
 }
 
 export const BurgerMenu = ({
@@ -32,34 +32,28 @@ export const BurgerMenu = ({
   setOpen,
   setOpenRegestration, // TODO: refactor naming
   setOpenWindowCity,
-}: BurgerProp) => {
-  const handlerCloseBurgerMenu = () => {
+}: BurgerProps) => {
+  const handleCloseBurgerMenu = () => {
     setOpenBurgerMenu(false)
   }
 
-  // TODO: refactor naming(FIXED)
-  const handlerStopPropagationMenu = (e: React.MouseEvent) => {
+  const handleStopPropagationMenu = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
 
-  const handlerCloseXBurgerMenu = () => {
-    setOpenBurgerMenu(false)
-  }
-
-  const handlerOpenModalWindow = (e: React.MouseEvent) => {
+  const handleOpenModalWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenBurgerMenu(false)
     setOpen(true)
   }
 
-  // TODO: refactor naming - handleOpenRegistrationWindow(FIXED)
   const handleOpenRegestrationWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenBurgerMenu(false)
     setOpenRegestration(true)
   }
 
-  const handlerOpenCityWindow = (e: React.MouseEvent) => {
+  const handleOpenCityWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenWindowCity(true)
     setOpenBurgerMenu(false)
@@ -69,14 +63,14 @@ export const BurgerMenu = ({
     <>
       <div
         className={`burger_holder animated_burger ${openBurgerMenu ? 'show_burger' : ''} `}
-        onClick={handlerCloseBurgerMenu}
+        onClick={handleCloseBurgerMenu}
       >
-        <div className="burger_window" onClick={handlerStopPropagationMenu}>
+        <div className="burger_window" onClick={handleStopPropagationMenu}>
           <div className="burger_menu_header">
-            <Link href="/" onClick={handlerCloseBurgerMenu}>
+            <Link href="/" onClick={handleCloseBurgerMenu}>
               <Image alt="Rozetka" height={24} placeholder="empty" src="/Logo/logo.svg" width={144} />
             </Link>
-            <button className="burger_close" onClick={handlerCloseXBurgerMenu}>
+            <button className="burger_close" onClick={handleCloseBurgerMenu}>
               X
             </button>
           </div>
@@ -89,7 +83,7 @@ export const BurgerMenu = ({
                 </div>
                 <div className="burger_menu_auth_content">
                   <div className="burger_menu_auth_buttons">
-                    <button className="button auth_button" onClick={handlerOpenModalWindow}>
+                    <button className="button auth_button" onClick={handleOpenModalWindow}>
                       Вхід
                     </button>
                     <button className="button auth_button" onClick={handleOpenRegestrationWindow}>
@@ -134,7 +128,7 @@ export const BurgerMenu = ({
                 </a>
               </li>
               <li className="burger_menu_item border_zero">
-                <Link href="/shopCart/ShopCart" onClick={handlerCloseBurgerMenu}>
+                <Link href="/shopCart/ShopCart" onClick={handleCloseBurgerMenu}>
                   <button className="burger_menu_button">
                     <span className="burger_menu_icon_button">
                       <FontAwesomeIcon icon={faCartShopping} />
@@ -165,7 +159,7 @@ export const BurgerMenu = ({
                 <div className="burger_menu_switch">
                   <p className="burger_menu_switch_label">Місто</p>
                   <div className="burger_menu_city_toggle">
-                    <button className="button city_toggle" onClick={handlerOpenCityWindow}>
+                    <button className="button city_toggle" onClick={handleOpenCityWindow}>
                       <span className="city_toggle_text">Умань</span>
                       <i className="city_toggle_arrow fa-solid fa-chevron-down"></i>
                     </button>

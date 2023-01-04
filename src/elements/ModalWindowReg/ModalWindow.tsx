@@ -12,13 +12,13 @@ interface IFormsValid {
   password: string
 }
 
-type OpenProps = {
+type ModalWindowProps = {
   open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: (isOpen: boolean) => void
   openRemindePass: boolean
-  setOpenRemindePass: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRemindePass: (isOpenRemindePass: boolean) => void
   openRegestration: boolean
-  setOpenRegestration: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRegestration: (isOpenRegestration: boolean) => void
 }
 
 export const ModalWindow = ({
@@ -28,7 +28,7 @@ export const ModalWindow = ({
   setOpenRemindePass,
   openRegestration,
   setOpenRegestration,
-}: OpenProps) => {
+}: ModalWindowProps) => {
   const [type, setType] = useState('password')
   const [icon, setIcon] = useState('eye-slash')
 
@@ -57,24 +57,20 @@ export const ModalWindow = ({
     reset()
   }
 
-  const handlerCloseModalWindow = () => {
+  const handleCloseModalWindow = () => {
     setOpen(false)
   }
 
-  const handlerCloseXModalWindow = () => {
-    setOpen(false)
-  }
-
-  const handlerStopPropagationWindow = (e: React.MouseEvent) => {
+  const handleStopPropagationWindow = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
 
-  const handlerOpenRemindeWindow = (e: React.MouseEvent) => {
+  const handleOpenRemindeWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenRemindePass(true)
     setOpen(false)
   }
-  const handlerOpenRegestrationWindow = (e: React.MouseEvent) => {
+  const handleOpenRegestrationWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenRegestration(true)
     setOpen(false)
@@ -92,11 +88,11 @@ export const ModalWindow = ({
         setOpen={setOpen}
         setOpenRegestration={setOpenRegestration}
       />
-      <div className={`modal_holder animated ${open ? 'show' : ''} `} onClick={handlerCloseModalWindow}>
-        <div className="modal_window" onClick={handlerStopPropagationWindow}>
+      <div className={`modal_holder animated ${open ? 'show' : ''} `} onClick={handleCloseModalWindow}>
+        <div className="modal_window" onClick={handleStopPropagationWindow}>
           <div className="modal_header">
             <div className="modal_heading">Вхід</div>
-            <button className="modal_close" onClick={handlerCloseXModalWindow}>
+            <button className="modal_close" onClick={handleCloseModalWindow}>
               X
             </button>
           </div>
@@ -146,14 +142,14 @@ export const ModalWindow = ({
                       Запам`ятати мене
                     </label>
 
-                    <button className="auth_modal_link" onClick={handlerOpenRemindeWindow}>
+                    <button className="auth_modal_link" onClick={handleOpenRemindeWindow}>
                       Нагадати пароль
                     </button>
                   </div>
 
                   <div className="form_row button_center">
                     <ButtonModalWindow entry="Увійти" isValid={!isValid} />
-                    <button className="button button_link_modal" onClick={handlerOpenRegestrationWindow}>
+                    <button className="button button_link_modal" onClick={handleOpenRegestrationWindow}>
                       Зареєструватися
                     </button>
                   </div>

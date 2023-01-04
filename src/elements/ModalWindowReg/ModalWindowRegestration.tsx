@@ -5,10 +5,10 @@ import { AuthModalSocials } from 'src/elements/AuthModalSocials/AuthModalSocials
 
 import { ButtonModalWindow } from './ButtonModalWindow'
 
-type regestrationProp = {
+type ModalWindowRegestrationProps = {
   openRegestration: boolean
-  setOpenRegestration: React.Dispatch<React.SetStateAction<boolean>>
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRegestration: (isOpenRegestration: boolean) => void
+  setOpen: (isOpen: boolean) => void
 }
 
 interface IFormsValid {
@@ -19,7 +19,11 @@ interface IFormsValid {
   password: string
 }
 
-export const ModalWindowRegestration = ({ openRegestration, setOpenRegestration, setOpen }: regestrationProp) => {
+export const ModalWindowRegestration = ({
+  openRegestration,
+  setOpenRegestration,
+  setOpen,
+}: ModalWindowRegestrationProps) => {
   const {
     register,
     formState: { errors, isValid },
@@ -48,19 +52,15 @@ export const ModalWindowRegestration = ({ openRegestration, setOpenRegestration,
     }
   }
 
-  const handlerCloseRegestrationWindow = () => {
+  const handleCloseRegestrationWindow = () => {
     setOpenRegestration(false)
   }
 
-  const handlerStopPropagationWindow = (e: React.MouseEvent) => {
+  const handleStopPropagationWindow = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
 
-  const handlerCloseXRegestrationWindow = () => {
-    setOpenRegestration(false)
-  }
-
-  const handlerAllreadyRegister = (e: React.MouseEvent) => {
+  const handleAllreadyRegister = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenRegestration(false)
     setOpen(true)
@@ -70,12 +70,12 @@ export const ModalWindowRegestration = ({ openRegestration, setOpenRegestration,
     <>
       <div
         className={`modal_holder animated ${openRegestration ? 'show' : ''} `}
-        onClick={handlerCloseRegestrationWindow}
+        onClick={handleCloseRegestrationWindow}
       >
-        <div className="modal_window" onClick={handlerStopPropagationWindow}>
+        <div className="modal_window" onClick={handleStopPropagationWindow}>
           <div className="modal_header">
             <div className="modal_heading">Реєстрація</div>
-            <button className="modal_close" onClick={handlerCloseXRegestrationWindow}>
+            <button className="modal_close" onClick={handleCloseRegestrationWindow}>
               X
             </button>
           </div>
@@ -206,7 +206,7 @@ export const ModalWindowRegestration = ({ openRegestration, setOpenRegestration,
 
                   <div className="form_row button_center">
                     <ButtonModalWindow entry="Зареєструватися" isValid={!isValid} />
-                    <button className="button button_link_modal" onClick={handlerAllreadyRegister}>
+                    <button className="button button_link_modal" onClick={handleAllreadyRegister}>
                       Я вже зареєстрований
                     </button>
                   </div>

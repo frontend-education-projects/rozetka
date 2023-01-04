@@ -8,7 +8,7 @@ import styles from './FooterCopyright.module.sass'
 export const PaymentVisa = () => {
   const [openCard, setOpenCard] = useState(false)
 
-  const handlerOpenCard = () => {
+  const handleOpenCard = () => {
     setOpenCard(true)
   }
 
@@ -21,7 +21,7 @@ export const PaymentVisa = () => {
         text="Verified by Visa"
       />
       <li>
-        <button className={clsx(styles.payments_button, styles.payments_space)} onClick={handlerOpenCard}>
+        <button className={clsx(styles.payments_button, styles.payments_space)} onClick={handleOpenCard}>
           <Image alt="mastercard" height={32} src="/Payments/visa-logo.svg" width={72} />
         </button>
       </li>

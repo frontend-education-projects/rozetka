@@ -14,7 +14,7 @@ export const Burger = () => {
   const [openRegestration, setOpenRegestration] = useState(false)
   const [openWindowCity, setOpenWindowCity] = useState(false)
 
-  const handlerOpenMenuBurger = () => {
+  const handleOpenMenuBurger = () => {
     setOpenBurgerMenu(true)
   }
 
@@ -42,7 +42,7 @@ export const Burger = () => {
       />
 
       <BurgerModalWindowCity openWindowCity={openWindowCity} setOpenWindowCity={setOpenWindowCity} />
-      <button className={styles.icon__menu} onClick={handlerOpenMenuBurger} type="button">
+      <button className={styles.icon__menu} onClick={handleOpenMenuBurger} type="button">
         <span></span>
       </button>
     </>

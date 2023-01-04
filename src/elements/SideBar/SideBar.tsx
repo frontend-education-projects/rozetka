@@ -20,7 +20,7 @@ type LinksSidebarProps = {
   path: string
 }
 
-type sidebarLinks = {
+type sidebarLinksProps = {
   sidebarLinks: LinksSidebarProps[]
 }
 
@@ -31,7 +31,7 @@ type sidebarLinksInfo = {
   path: string
 }
 
-export const SideBar = ({ sidebarLinks }: sidebarLinks) => {
+export const SideBar = ({ sidebarLinks }: sidebarLinksProps) => {
   const [open, setOpen] = useState(false)
   const [openRemindePass, setOpenRemindePass] = useState(false)
   const [openRegestration, setOpenRegestration] = useState(false)

@@ -7,8 +7,8 @@ import { ButtonModalWindow } from './ButtonModalWindow'
 
 type remindePassProp = {
   openRemindePass: boolean
-  setOpenRemindePass: React.Dispatch<React.SetStateAction<boolean>>
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRemindePass: (isOpenRemindePass: boolean) => void
+  setOpen: (isOpen: boolean) => void
 }
 
 interface IFormsValid {

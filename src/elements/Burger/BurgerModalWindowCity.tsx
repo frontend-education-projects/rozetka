@@ -4,21 +4,21 @@ import React from 'react'
 
 import styles from './BurgerModalWindowCityStyle.module.sass'
 
-type ModalWindowCity = {
+type ModalWindowCityProps = {
   openWindowCity: boolean
-  setOpenWindowCity: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenWindowCity: (isOpenWindowCity: boolean) => void
 }
 
-export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: ModalWindowCity) => {
-  const hendlerCloseCityWindow = () => {
+export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: ModalWindowCityProps) => {
+  const handleCloseCityWindow = () => {
     setOpenWindowCity(false)
   }
 
-  const hendlerStopPropagationCity = (e: React.MouseEvent) => {
+  const handleStopPropagationCity = (e: React.MouseEvent) => {
     e.stopPropagation()
   }
 
-  const hendlerCloseCityWindowAccept = (e: React.MouseEvent) => {
+  const handleCloseCityWindowAccept = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenWindowCity(false)
   }
@@ -26,12 +26,12 @@ export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: Mod
     <>
       <div
         className={clsx(styles.modal_city_holder, styles.animated_city, openWindowCity ? styles.show_city : '')}
-        onClick={hendlerCloseCityWindow}
+        onClick={handleCloseCityWindow}
       >
-        <div className={styles.modal_city_window} onClick={hendlerStopPropagationCity}>
+        <div className={styles.modal_city_window} onClick={handleStopPropagationCity}>
           <div className={styles.modal_city_header}>
             <div className={styles.modal_city_heading}>Виберіть своє місто</div>
-            <button className={styles.modal_city_close} onClick={hendlerCloseCityWindow}>
+            <button className={styles.modal_city_close} onClick={handleCloseCityWindow}>
               X
             </button>
           </div>
@@ -76,12 +76,12 @@ export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: Mod
               </p>
             </form>
             <div className={styles.header_location_footer}>
-              <Link href="/" onClick={hendlerCloseCityWindow}>
+              <Link href="/" onClick={handleCloseCityWindow}>
                 Перейти на головну сторінку
               </Link>
               <button
                 className={clsx('button', styles.location_footer_applybutton)}
-                onClick={hendlerCloseCityWindowAccept}
+                onClick={handleCloseCityWindowAccept}
               >
                 Застосувати
               </button>

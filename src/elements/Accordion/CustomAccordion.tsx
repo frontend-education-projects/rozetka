@@ -2,12 +2,12 @@ import React, { ReactNode, useState } from 'react'
 
 import styles from '../FooterSidebarElements/FooterSidebar.module.sass'
 
-type accordionProp = {
+type accordionProps = {
   accordionTitle: string
   children: ReactNode
 }
 
-export const CustomAccordion = ({ accordionTitle, children }: accordionProp) => {
+export const CustomAccordion = ({ accordionTitle, children }: accordionProps) => {
   const [openAccordion, setOpenAccordion] = useState(false)
 
   const toggleHendler = () => {
