@@ -15,7 +15,7 @@ type MassiveSocialsLinksProps = {
 
 type SocialsLinksProps = {
   SocialsLinks: MassiveSocialsLinksProps[]
-  socialsClass?: string
+  socialsClassName?: string
 }
 
 type SocialsLinksInfoProps = {
@@ -25,13 +25,13 @@ type SocialsLinksInfoProps = {
   socPath: string
 }
 
-export const SocialsMain = ({ SocialsLinks, socialsClass }: SocialsLinksProps) => {
+export const SocialsMain = ({ SocialsLinks, socialsClassName }: SocialsLinksProps) => {
   if (!SocialsLinks) {
     return null
   }
 
   return (
-    <div className={clsx(styles.socials_sidebar_block, styles[socialsClass || ''])}>
+    <div className={clsx(styles.socials_sidebar_block, styles[socialsClassName || ''])}>
       <div className={styles.socials_sidebar_heading}>Ми в соціальних мережах</div>
       <ul className={styles.socials_list}>
         {SocialsLinks.map(({ id, classSoc, socIcon, socPath }: SocialsLinksInfoProps) => (

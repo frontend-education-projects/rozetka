@@ -9,6 +9,12 @@
   z-index: 10
   border: 0
   outline: none
+  opacity: 0
+  visibility: hidden
+
+.show_city
+  opacity: 1
+  visibility: visible
 
 .modal_city_window
   background-color: #fff
@@ -17,25 +23,18 @@
   max-height: 100%
   height: auto
   border-radius: 8px
-  position: absolute
+  position: fixed
   left: 50%
   top: 50%
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1)
   transition: all 0.3s ease-in-out
-
-.modal_city_holder.animated_city
-  opacity: 0
   visibility: hidden
-  .modal_city_window
-    visibility: hidden
-    transform: translate(-50%, -30%) scale(0)
+  transform: translate(-50%, -30%) scale(0)
+  z-index: 100
 
-.modal_city_holder.show_city
-  opacity: 1
+.show_city_window
   visibility: visible
-  .modal_city_window
-    visibility: visible
-    transform: translate(-50%, -45%) scale(1)
+  transform: translate(-50%, -45%) scale(1)
 
 .modal_city_header
   padding: 0 24px

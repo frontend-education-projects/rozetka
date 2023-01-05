@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import React, { ReactNode, useState } from 'react'
 
 import styles from '../FooterSidebarElements/FooterSidebar.module.sass'
@@ -18,11 +19,11 @@ export const CustomAccordion = ({ accordionTitle, children }: CustomAccordionPro
     <div className={styles.footer_sidebar_links}>
       <div className={styles.footer_sidebar_heading}>
         <div className={styles.footer_sidebar_title}>{accordionTitle}</div>
-        <button className={'button accordion_icon'} onClick={toggleHendler}>
-          <i aria-expanded={openAccordion} className="accordion_arrow fa-solid fa-chevron-down" />
+        <button className={clsx('button', styles.accordion_icon)} onClick={toggleHendler}>
+          <i aria-expanded={openAccordion} className={clsx(styles.accordion_arrow, 'fa-solid', 'fa-chevron-down')} />
         </button>
       </div>
-      <div aria-expanded={!openAccordion} className="accordion_content">
+      <div aria-expanded={!openAccordion} className={clsx(styles.accordion_content)}>
         {children}
       </div>
     </div>

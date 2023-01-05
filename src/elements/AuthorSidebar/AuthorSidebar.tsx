@@ -1,4 +1,4 @@
-import React from 'react' // TODO: create eslint rule to forbid React import
+import React from 'react'
 
 import styles from './AuthorSidebar.module.sass'
 

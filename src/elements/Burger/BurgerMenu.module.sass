@@ -5,11 +5,16 @@
   right: 0
   bottom: 0
   background-color: #00000080
-  transition: all 0.5s ease 0.2s
+  transition: all 0.5s ease
   z-index: 10
+  opacity: 0
+  visibility: hidden
+
+.show_burger
+  opacity: 1
+  visibility: visible
 
 .burger_window
-  position: static
   display: flex
   flex-direction: column
   background-color: #fff
@@ -17,28 +22,19 @@
   max-width: 320px
   max-height: 100%
   height: 100%
-  position: absolute
-  left: 50%
+  position: fixed
   top: 0
   pointer-events: auto
   z-index: 1000
   overflow-y: auto
   box-shadow: 2px 0 6px #33333342
   transition: all 1s ease
-
-.burger_holder.animated_burger
-  opacity: 0
   visibility: hidden
-  .burger_window
-    visibility: hidden
-    left: -100%
+  left: -50%
 
-.burger_holder.show_burger
-  opacity: 1
+.burger_window_show
   visibility: visible
-  .burger_window
-    visibility: visible
-    left: 0
+  left: 0
 
 .burger_menu_header
   display: flex
@@ -279,3 +275,17 @@
   width: 24px
   height: 24px
   margin-left: 12px
+
+.footer_sidebar_list
+  padding: 2px 4px
+
+.footer_sidebar_list a
+  display: block
+  padding: 0 4px
+  font-size: 14px
+  color: var(--global-black)
+  line-height: 32px
+  border-radius: 4px
+  &:hover
+    text-decoration: underline
+    color: var(--global-black)

@@ -22,19 +22,18 @@ export const CopyrightModalWindow = ({ text, content, openCard, setOpenCard }: C
   return (
     <>
       <div
-        className={clsx(styles.modal_holder_cards, styles.animated_cards, openCard ? styles.show_cards : '')}
+        className={clsx(styles.modal_holder_cards, openCard ? styles.show_cards : '')}
         onClick={handleCloseCardWindow}
-      >
-        <div className={styles.modal_window_cards} onClick={(e) => e.stopPropagation()}>
-          <div className={styles.modal_header_cards}>
-            <div className={styles.modal_heading_cards}>{text}</div>
-            <button className={styles.modal_close_cards} onClick={handleCloseXCardWindow}>
-              X
-            </button>
-          </div>
-          <div className={styles.modal_content_cards}>
-            <p className={styles.modal_content_text}>{content}</p>
-          </div>
+      ></div>
+      <div className={clsx(styles.modal_window_cards, openCard ? styles.show_cards_window : '')}>
+        <div className={styles.modal_header_cards}>
+          <div className={styles.modal_heading_cards}>{text}</div>
+          <button className={styles.modal_close_cards} onClick={handleCloseXCardWindow}>
+            X
+          </button>
+        </div>
+        <div className={styles.modal_content_cards}>
+          <p className={styles.modal_content_text}>{content}</p>
         </div>
       </div>
     </>

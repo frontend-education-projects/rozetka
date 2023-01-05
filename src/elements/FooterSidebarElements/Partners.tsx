@@ -6,7 +6,7 @@ import styles from './FooterSidebar.module.sass'
 
 export const Partners = () => {
   return (
-    <div className={clsx(styles.footer_sidebar_links, 'border_zero')}>
+    <div className={clsx(styles.footer_sidebar_links, styles.border_zero)}>
       <div className={styles.footer_sidebar_heading}>
         <div className={styles.footer_sidebar_title}>Інформація про компанію</div>
       </div>
