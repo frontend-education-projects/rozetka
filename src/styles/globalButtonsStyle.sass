@@ -1,4 +1,6 @@
+//!variant
 
+//! classVariant ===============================|
 a
   text-decoration: none
   color: inherit
@@ -17,6 +19,9 @@ a
     text-decoration: underline
     color: var(--global-red)
 
+button:disabled
+  opacity: 0.5
+
 .button
   border: none
   background: none
@@ -25,6 +30,7 @@ a
   box-sizing: border-box
   display: inline-block
   font-family: Roboto,sans-serif
+  font-weight: 400
   margin: 0
   outline: none
   padding-left: 16px
@@ -52,6 +58,108 @@ button
   transition-duration: .2s
   transition-property: color,background-color,border-color
   transition-timing-function: ease-in-out
+
+//! Search button ===================|
+
+.btn_search
+  display: inline-block
+  margin: 0
+  border-radius: 0 3px 3px 0
+  line-height: normal
+  font-size: 16px
+  height: 40px
+  border: none
+  outline: 0
+  padding: 0 16px
+  transition: all 0.2s ease
+  cursor: pointer
+  color: #fff
+  background-color: #00a046
+  &:hover
+    background-color: #00bc52
+
+//! Search button ===================|
+
+//!Login button =====================|
+
+.button_auth_modal
+  line-height: normal
+  width: 100%
+  background-color: var(--global-green)
+  color: #fff
+  font-size: 18px
+  height: 48px
+  cursor: pointer
+  margin-bottom: 16px
+  &:hover
+    background-color: #00bc52
+    color: #fff
+
+.auth_modal_link
+  font-size: 14px
+  margin-left: auto
+  border: 0
+  background: 0
+  color: var(--global-link)
+  transition: all 0.2s ease
+  cursor: pointer
+  &:hover
+    color: var(--global-red)
+    text-decoration: underline
+
+.button_link_modal
+  border: 0
+  color: var(--link-color)
+  background: none
+  font-size: 17px
+  cursor: pointer
+  transition: all 0.2s ease
+  &:hover
+    color: var(--link-hover-color)
+
+.button_socials
+  width: 100%
+  line-height: normal
+  align-items: center
+  display: flex
+  flex-direction: row
+  justify-content: center
+  font-size: 18px
+  height: 48px
+  background-color: var(--global-black-5)
+  box-shadow: inset 0 0 0 1px #ebebeb
+  color: #3e77aa
+  i
+    color: #23599b
+    width: 18px
+    height: 18px
+    margin-right: 12px
+    font-size: 15px
+    padding-top: 2px
+  &:hover
+    color: #4096e3
+
+.button_space
+  margin-top: 16px
+
+//!Login button =====================|
+
+//!Products button ===============================|
+.tabs_link
+  display: inline-block
+  font-size: 14px
+  height: 40px
+  line-height: 40px
+  padding-left: 8px
+  padding-right: 8px
+  white-space: nowrap
+  &:hover
+    box-shadow: inset 0 -2px 0 0 var(--global-green)
+    color: var(--global-green)
+
+.tabs_link_active
+  box-shadow: inset 0 -2px 0 0 var(--global-green)
+  color: var(--global-green)
 
 .all_shares_link
   display: flex
@@ -145,3 +253,16 @@ button
   box-shadow: inset 0 0 0 1px #ebebeb
   &:hover
     color: var(--global-light-blue)
+
+.tags_link
+  display: inline-block
+  padding: 0 8px
+  border: 1px solid #d2d2d2
+  border-radius: 4px
+  background: none
+  font-size: 12px
+  line-height: 2em
+  &:hover
+    border-color: #00a046
+
+//!Products button ===============================|
