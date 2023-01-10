@@ -1,14 +1,37 @@
 //!variant
+.primary
+  color: #fff !important
+  background-color: #00a046 !important
+  &:hover
+    background-color: #00bc52 !important
+    color: #fff !important
+
+.secondary
+  color: #fff !important
+  background-color: var(--global-blue) !important
+  &:hover
+    background-color: var(--global-light-blue) !important
+
+.tertiary
+  color: var(--global-blue) !important
+  background-color: var(--global-black-5) !important
+  box-shadow: inset 0 0 0 1px #ebebeb !important
+  &:hover
+    color: var(--global-light-blue) !important
+
+.href
+  color: var(--link-color) !important
+  &:hover
+    color: var(--link-hover-color) !important
+
+.href_
+  color: var(--link-color) !important
+  text-decoration: none !important
+  &:hover
+    color: var(--global-red) !important
+    text-decoration: underline !important
 
 //! classVariant ===============================|
-a
-  text-decoration: none
-  color: inherit
-  transition: all 0.3s ease
-  cursor: pointer
-  &:hover
-    text-decoration: underline
-    color: var(--global-red)
 
 .a
   text-decoration: none
@@ -18,9 +41,6 @@ a
   &:hover
     text-decoration: underline
     color: var(--global-red)
-
-button:disabled
-  opacity: 0.5
 
 .button
   border: none
@@ -41,42 +61,16 @@ button:disabled
   transition-property: color,background-color,border-color
   transition-timing-function: ease-in-out
 
-button
-  border: none
-  background: none
-  cursor: pointer
-  border-radius: 4px
-  box-sizing: border-box
-  display: inline-block
-  font-family: Roboto,sans-serif
-  margin: 0
-  outline: none
-  padding-left: 16px
-  padding-right: 16px
-  position: relative
-  text-align: center
-  transition-duration: .2s
-  transition-property: color,background-color,border-color
-  transition-timing-function: ease-in-out
-
 //! Search button ===================|
 
 .btn_search
   display: inline-block
-  margin: 0
   border-radius: 0 3px 3px 0
   line-height: normal
   font-size: 16px
   height: 40px
-  border: none
-  outline: 0
   padding: 0 16px
   transition: all 0.2s ease
-  cursor: pointer
-  color: #fff
-  background-color: #00a046
-  &:hover
-    background-color: #00bc52
 
 //! Search button ===================|
 
@@ -85,37 +79,38 @@ button
 .button_auth_modal
   line-height: normal
   width: 100%
-  background-color: var(--global-green)
   color: #fff
   font-size: 18px
   height: 48px
-  cursor: pointer
   margin-bottom: 16px
-  &:hover
-    background-color: #00bc52
-    color: #fff
 
 .auth_modal_link
   font-size: 14px
   margin-left: auto
-  border: 0
-  background: 0
-  color: var(--global-link)
   transition: all 0.2s ease
-  cursor: pointer
-  &:hover
-    color: var(--global-red)
-    text-decoration: underline
 
 .button_link_modal
-  border: 0
-  color: var(--link-color)
-  background: none
   font-size: 17px
-  cursor: pointer
   transition: all 0.2s ease
-  &:hover
-    color: var(--link-hover-color)
+
+.button_socials_withMargin
+  width: 100%
+  line-height: normal
+  align-items: center
+  display: flex
+  flex-direction: row
+  justify-content: center
+  font-size: 18px
+  height: 48px
+  box-shadow: inset 0 0 0 1px #ebebeb
+  margin-bottom: 16px
+  i
+    color: #23599b
+    width: 18px
+    height: 18px
+    margin-right: 12px
+    font-size: 15px
+    padding-top: 2px
 
 .button_socials
   width: 100%
@@ -126,9 +121,6 @@ button
   justify-content: center
   font-size: 18px
   height: 48px
-  background-color: var(--global-black-5)
-  box-shadow: inset 0 0 0 1px #ebebeb
-  color: #3e77aa
   i
     color: #23599b
     width: 18px
@@ -136,11 +128,6 @@ button
     margin-right: 12px
     font-size: 15px
     padding-top: 2px
-  &:hover
-    color: #4096e3
-
-.button_space
-  margin-top: 16px
 
 //!Login button =====================|
 
@@ -156,6 +143,7 @@ button
   &:hover
     box-shadow: inset 0 -2px 0 0 var(--global-green)
     color: var(--global-green)
+    text-decoration: none
 
 .tabs_link_active
   box-shadow: inset 0 -2px 0 0 var(--global-green)
@@ -180,17 +168,19 @@ button
     margin-left: 8px
 
 .show_more_button
-  padding: 0
+  width: calc( 25% - 1px )
   float: right
-  color: var(--global-link)
   display: flex
+  white-space: nowrap
   flex-direction: row
   align-items: center
+  justify-content: center
   margin-right: 1px
   border-radius: 0 0 4px 4px
   box-shadow: 0 0 0 1px #e9e9e9
   font-size: 14px
   padding: 9.6px 47.42px
+  transition: all 0.3s ease
   & i
     display: flex
     width: 8px
@@ -198,19 +188,14 @@ button
     align-items: center
     font-size: 8px
     margin-left: 8px
-  &:hover
-    color: var(--global-red)
-    text-decoration: none
 
 .product_buy_button
-  padding: 0
   display: flex
   padding: 8px 16px
   line-height: normal
   align-items: center
   flex-direction: row
   justify-content: center
-  background-color: var(--global-green)
   color: #fff
   font-size: 16px
   & i
@@ -220,26 +205,17 @@ button
     display: flex
     align-items: center
     margin-right: 12px
-  &:hover
-    background-color: #01b650
 
 .product_credit
-  padding: 0
   display: flex
-  width: 100%
   padding: 10.4px 14px
   line-height: normal
   align-items: center
   flex-direction: row
   justify-content: center
   font-size: 16px
-  color: #fff
-  background-color: var(--global-blue)
-  &:hover
-    background-color: var(--global-light-blue)
 
 .button_product_detail
-  padding: 0
   display: flex
   width: 100%
   padding: 7.6px 12.3px
@@ -248,18 +224,12 @@ button
   flex-direction: row
   justify-content: center
   font-size: 14px
-  color: var(--global-blue)
-  background-color: #f5f5f5
-  box-shadow: inset 0 0 0 1px #ebebeb
-  &:hover
-    color: var(--global-light-blue)
 
 .tags_link
   display: inline-block
   padding: 0 8px
   border: 1px solid #d2d2d2
   border-radius: 4px
-  background: none
   font-size: 12px
   line-height: 2em
   &:hover

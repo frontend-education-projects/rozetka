@@ -1,7 +1,6 @@
 // TODO: move styles to the appropriate components
 import '../styles/global.sass'
 import '../styles/globalReset.sass'
-import '../styles/globalButtonsStyle.sass'
 import '../elements/ModalWindowReg/ModalWindow.sass'
 import '../elements/Socials/SocialsMain.sass'
 import '../elements/FooterSidebarElements/FooterSidebar.sass'
