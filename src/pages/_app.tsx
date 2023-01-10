@@ -1,5 +1,4 @@
 import '../styles/global.sass'
-import '../styles/globalButtonsStyle.sass'
 import '../styles/globalReset.sass'
 import '../styles/globalModalWindowStyles.sass'
 import '../elements/MainSlider/MainSliderStyle.sass'
