@@ -1,41 +1,39 @@
+import clsx from 'clsx'
 import React from 'react'
+
+import styles from './CopyrightModalWindow.module.sass'
 
 type CopyrightModalWindowProps = {
   text: string
   content: string
   openCard: boolean
-  setOpenCard: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenCard: (isOpenCard: boolean) => void
 }
 
 export const CopyrightModalWindow = ({ text, content, openCard, setOpenCard }: CopyrightModalWindowProps) => {
-  const handlerCloseCardWindow = () => {
+  const handleCloseCardWindow = () => {
     setOpenCard(false)
   }
 
-  const handlerStopPropagationCardWindow = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
-  const handlerCloseXCardWindow = () => {
+  const handleCloseXCardWindow = () => {
     setOpenCard(false)
   }
 
   return (
     <>
       <div
-        className={`modal_holder_cards animated_cards ${openCard ? 'show_cards' : ''} `}
-        onClick={handlerCloseCardWindow}
-      >
-        <div className="modal_window_cards" onClick={handlerStopPropagationCardWindow}>
-          <div className="modal_header_cards">
-            <div className="modal_heading_cards">{text}</div>
-            <button className="modal_close_cards" onClick={handlerCloseXCardWindow}>
-              X
-            </button>
-          </div>
-          <div className="modal_content_cards">
-            <p className="modal_content_text">{content}</p>
-          </div>
+        className={clsx(styles.modal_holder_cards, openCard ? styles.show_cards : '')}
+        onClick={handleCloseCardWindow}
+      ></div>
+      <div className={clsx(styles.modal_window_cards, openCard ? styles.show_cards_window : '')}>
+        <div className={styles.modal_header_cards}>
+          <div className={styles.modal_heading_cards}>{text}</div>
+          <button className={styles.modal_close_cards} onClick={handleCloseXCardWindow}>
+            X
+          </button>
+        </div>
+        <div className={styles.modal_content_cards}>
+          <p className={styles.modal_content_text}>{content}</p>
         </div>
       </div>
     </>

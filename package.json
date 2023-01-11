@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",
     "@mui/styled-engine-sc": "^5.10.14",
+    "clsx": "^1.2.1",
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

@@ -1,17 +1,16 @@
+import clsx from 'clsx'
 import Image from 'next/image'
 import React from 'react'
 
 import styles from './ApplicationStore.module.sass'
 
-type appStoreProp = {
-  appClass?: string
+type AppStoreProp = {
+  appClassName?: string
 }
 
-export const ApplicationStore = ({ appClass }: appStoreProp) => {
+export const ApplicationStore = ({ appClassName }: AppStoreProp) => {
   return (
-    // TODO: replace with clsx library
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    <div className={`apps_store ${appClass}`}>
+    <div className={clsx(styles.apps_store, styles[appClassName || ''])}>
       <div className={styles.store_title}>Встановлюй наші додатки</div>
       <div className={styles.store_buttons}>
         <a

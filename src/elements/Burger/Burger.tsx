@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-// TODO: create import alias
 import { ModalWindow } from 'src/elements/ModalWindowReg/ModalWindow'
 
 import styles from './Burger.module.sass'
@@ -14,7 +13,7 @@ export const Burger = () => {
   const [openRegestration, setOpenRegestration] = useState(false)
   const [openWindowCity, setOpenWindowCity] = useState(false)
 
-  const handlerOpenMenuBurger = () => {
+  const handleOpenMenuBurger = () => {
     setOpenBurgerMenu(true)
   }
 
@@ -42,7 +41,7 @@ export const Burger = () => {
       />
 
       <BurgerModalWindowCity openWindowCity={openWindowCity} setOpenWindowCity={setOpenWindowCity} />
-      <button className={styles.icon__menu} onClick={handlerOpenMenuBurger} type="button">
+      <button className={styles.icon__menu} onClick={handleOpenMenuBurger} type="button">
         <span></span>
       </button>
     </>

@@ -1,15 +1,21 @@
-
+//TODO: hardcore color for background #00000080
 .modal_holder
   position: fixed
   left: 0
   top: 0
   right: 0
   bottom: 0
-  background-color: #00000080
-  transition: all 0.1s ease-in-out
+  background-color: var(--global-black-modal)
+  transition: all 0.3s ease-in-out
   z-index: 10
   border: 0
   outline: none
+  opacity: 0
+  visibility: hidden
+
+.show_holder
+  opacity: 1
+  visibility: visible
 
 .modal_window
   background-color: #fff
@@ -18,25 +24,18 @@
   max-height: 100%
   height: auto
   border-radius: 8px
-  position: absolute
+  position: fixed
   left: 50%
   top: 50%
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1)
   transition: all 0.3s ease-in-out
-
-.modal_holder.animated
-  opacity: 0
   visibility: hidden
-  .modal_window
-    visibility: hidden
-    transform: translate(-50%, -30%) scale(0)
+  transform: translate(-50%, -30%) scale(0)
+  z-index: 1000
 
-.modal_holder.show
-  opacity: 1
+.show_window
   visibility: visible
-  .modal_window
-    visibility: visible
-    transform: translate(-50%, -45%) scale(1)
+  transform: translate(-50%, -50%) scale(1)
 
 .modal_header
   padding: 0 24px
@@ -52,13 +51,12 @@
 .modal_heading
   font-size: 24px
   color: var(--global-black)
-  overflow: hidden
   white-space: nowrap
   text-overflow: ellipsis
 
 .modal_close
   font-size: 20px
-  color: var(--global-black-80)
+  color: var(--global-black-60)
   font-weight: 500
   position: absolute
   z-index: 99
@@ -84,6 +82,8 @@
   padding: 24px
   max-height: 100%
   overflow-y: auto
+  background-color: #fff
+  border-radius: 0 0 4px 4px
 
 .auth_modal
   display: flex

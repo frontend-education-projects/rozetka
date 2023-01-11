@@ -20,7 +20,7 @@ type LinksSidebarProps = {
   path: string
 }
 
-type sidebarLinks = {
+type sidebarLinksProps = {
   sidebarLinks: LinksSidebarProps[]
 }
 
@@ -31,17 +31,13 @@ type sidebarLinksInfo = {
   path: string
 }
 
-export const SideBar = ({ sidebarLinks }: sidebarLinks) => {
+export const SideBar = ({ sidebarLinks }: sidebarLinksProps) => {
   const [open, setOpen] = useState(false)
   const [openRemindePass, setOpenRemindePass] = useState(false)
   const [openRegestration, setOpenRegestration] = useState(false)
 
   if (!sidebarLinks) {
     return null
-  }
-
-  const handlerOpenMainWindow = () => {
-    setOpen(true)
   }
 
   return (
@@ -101,11 +97,7 @@ export const SideBar = ({ sidebarLinks }: sidebarLinks) => {
         </div>
 
         {/* author */}
-        <AuthorSidebar>
-          <button className={styles.btn_auth} onClick={handlerOpenMainWindow} type="button">
-            Увійдіть в особистий кабінет
-          </button>
-        </AuthorSidebar>
+        <AuthorSidebar setOpen={setOpen} />
 
         {/* apps */}
         <ApplicationStore />
