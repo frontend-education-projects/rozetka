@@ -10,7 +10,7 @@ import { sidebarLinks } from './api/data/sidebarCategoiesMassive'
 import { SliderPhotoMassive } from './api/data/SliderPhotosMassive'
 import styles from './index.module.sass'
 
-type SliderPhotoProp = {
+type SliderPhotoProps = {
   id: number
   picture: string
   pathPicture: string
@@ -31,7 +31,7 @@ export const Home = () => {
 
             <div className={styles.main_content}>
               <MainSlider>
-                {SliderPhotoMassive.map(({ id, picture, pathPicture }: SliderPhotoProp) => (
+                {SliderPhotoMassive.map(({ id, picture, pathPicture }: SliderPhotoProps) => (
                   <SwiperSlide key={id}>
                     <Link href={`${pathPicture}`}>
                       <Image

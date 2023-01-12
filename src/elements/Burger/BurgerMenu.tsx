@@ -1,6 +1,7 @@
 import { faCartShopping, faCircleQuestion, faPaperPlane, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -11,54 +12,45 @@ import { Help } from 'src/elements/FooterSidebarElements/Help'
 import { SocialsMain } from 'src/elements/Socials/SocialsMain'
 
 import { SocialsLinks } from '../../pages/api/data/sidebarCategoiesMassive'
+import styles from './BurgerMenu.module.sass'
 
-type BurgerProp = {
+type BurgerMenuProps = {
   openBurgerMenu: boolean
-  setOpenBurgerMenu: React.Dispatch<React.SetStateAction<boolean>> // TODO: refactor - type function handler () => void
+  setOpenBurgerMenu: (isOpenBurgerMenu: boolean) => void
   open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: (isOpen: boolean) => void
   openRemindePass: boolean
-  setOpenRemindePass: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRemindePass: (isOpenRemindePass: boolean) => void
   openRegestration: boolean
-  setOpenRegestration: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenRegestration: (isOpenRegestration: boolean) => void
   openWindowCity: boolean
-  setOpenWindowCity: React.Dispatch<React.SetStateAction<boolean>>
+  setOpenWindowCity: (isOpenWindowCity: boolean) => void
 }
 
 export const BurgerMenu = ({
   openBurgerMenu,
   setOpenBurgerMenu,
   setOpen,
-  setOpenRegestration, // TODO: refactor naming
+  setOpenRegestration,
   setOpenWindowCity,
-}: BurgerProp) => {
-  const handlerCloseBurgerMenu = () => {
+}: BurgerMenuProps) => {
+  const handleCloseBurgerMenu = () => {
     setOpenBurgerMenu(false)
   }
 
-  // TODO: refactor naming
-  const hendlerStopPropagationMenu = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
-  const handlerCloseXBurgerMenu = () => {
-    setOpenBurgerMenu(false)
-  }
-
-  const hendlerOpenModalWindow = (e: React.MouseEvent) => {
+  const handleOpenModalWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenBurgerMenu(false)
     setOpen(true)
   }
 
-  // TODO: refactor naming - handleOpenRegistrationWindow
-  const hendlerOpenRegestrationWindow = (e: React.MouseEvent) => {
+  const handleOpenRegestrationWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenBurgerMenu(false)
     setOpenRegestration(true)
   }
 
-  const hendlerOpenCityWindow = (e: React.MouseEvent) => {
+  const handleOpenCityWindow = (e: React.MouseEvent) => {
     e.preventDefault()
     setOpenWindowCity(true)
     setOpenBurgerMenu(false)
@@ -67,152 +59,161 @@ export const BurgerMenu = ({
   return (
     <>
       <div
-        className={`burger_holder animated_burger ${openBurgerMenu ? 'show_burger' : ''} `}
-        onClick={handlerCloseBurgerMenu}
-      >
-        <div className="burger_window" onClick={hendlerStopPropagationMenu}>
-          <div className="burger_menu_header">
-            <Link href="/" onClick={handlerCloseBurgerMenu}>
-              <Image alt="Rozetka" height={24} placeholder="empty" src="/Logo/logo.svg" width={144} />
-            </Link>
-            <button className="burger_close" onClick={handlerCloseXBurgerMenu}>
-              X
-            </button>
-          </div>
+        className={clsx(styles.burger_holder, openBurgerMenu ? styles.show_burger : '')}
+        onClick={handleCloseBurgerMenu}
+      ></div>
+      <div className={clsx(styles.burger_window, openBurgerMenu ? styles.burger_window_show : '')}>
+        <div className={styles.burger_menu_header}>
+          <Link href="/" onClick={handleCloseBurgerMenu}>
+            <Image alt="Rozetka" height={24} placeholder="empty" src="/Logo/logo.svg" width={144} />
+          </Link>
+          <button className={styles.burger_close} onClick={handleCloseBurgerMenu}>
+            X
+          </button>
+        </div>
 
-          <div className="burger_menu_body">
-            <div className="burger_menu_auth">
-              <div className="burger_menu_auth_block">
-                <div className="burger_menu_avatar">
-                  <FontAwesomeIcon icon={faUser} />
+        <div className={styles.burger_menu_body}>
+          <div className={styles.burger_menu_auth}>
+            <div className={styles.burger_menu_auth_block}>
+              <div className={styles.burger_menu_avatar}>
+                <FontAwesomeIcon icon={faUser} />
+              </div>
+              <div className={styles.burger_menu_auth_content}>
+                <div className={styles.burger_menu_auth_buttons}>
+                  <button className={clsx('button', styles.auth_button)} onClick={handleOpenModalWindow}>
+                    Вхід
+                  </button>
+                  <button className={clsx('button', styles.auth_button)} onClick={handleOpenRegestrationWindow}>
+                    Реєстрація
+                  </button>
                 </div>
-                <div className="burger_menu_auth_content">
-                  <div className="burger_menu_auth_buttons">
-                    <button className="button auth_button" onClick={hendlerOpenModalWindow}>
-                      Вхід
-                    </button>
-                    <button className="button auth_button" onClick={hendlerOpenRegestrationWindow}>
-                      Реєстрація
-                    </button>
-                  </div>
-                  <p className="auth_caption">Авторизуйтесь для отримання розширених можливостей</p>
-                </div>
+                <p className={styles.auth_caption}>Авторизуйтесь для отримання розширених можливостей</p>
               </div>
             </div>
-            <a className="burger_comeback" href="https://savelife.in.ua/donate/">
-              {/* TODO: collapse empty tag */}
-              <i className="comeback_shield fa-solid fa-shield-heart"></i> Повернись живим
-              <i className="comeback_arrow fa-solid fa-chevron-right"></i>
-            </a>
-
-            <ul className="burger_menu_list">
-              <li className="burger_menu_item">
-                <button className="burger_menu_button">
-                  <span className="burger_menu_icon_button">
-                    <GridViewOutlinedIcon sx={{ fontSize: 30 }} />
-                  </span>
-                  Каталог товарів
-                </button>
-              </li>
-              <li className="burger_menu_item">
-                <Link href="/">
-                  <button className="burger_menu_button">
-                    <span className="burger_menu_icon_button">
-                      <FontAwesomeIcon icon={faCircleQuestion} />
-                    </span>
-                    Довідковий центр
-                  </button>
-                </Link>
-
-                <a className="burger_menu_button chat_button" href="https://t.me/Rozetka_helpBot?start=src=hc">
-                  <span className="burger_menu_icon_button">
-                    <FontAwesomeIcon icon={faPaperPlane} />
-                  </span>
-                  Чат з ROZETKA
-                </a>
-              </li>
-              <li className="burger_menu_item border_zero">
-                <Link href="/shopCart/ShopCart" onClick={handlerCloseBurgerMenu}>
-                  <button className="burger_menu_button">
-                    <span className="burger_menu_icon_button">
-                      <FontAwesomeIcon icon={faCartShopping} />
-                    </span>
-                    Кошик
-                  </button>
-                </Link>
-              </li>
-            </ul>
-            <ul className="burger_menu_list">
-              <li className="burger_menu_item">
-                <div className="burger_menu_switch">
-                  <p className="burger_menu_switch_label">Мова</p>
-                  <div className="burger_lang_block">
-                    <ul className="burger_lang_list">
-                      <li className="burger_lang_item lang_link">
-                        <Link href="/">RU</Link>
-                      </li>
-                      <li className="burger_lang_item lang_space lang_link lang_link_active">
-                        <Link href="/">
-                          <Image alt="ua" height={16} src="/Lang/ua.svg" width={24} />
-                          UA
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="burger_menu_switch">
-                  <p className="burger_menu_switch_label">Місто</p>
-                  <div className="burger_menu_city_toggle">
-                    <button className="button city_toggle" onClick={hendlerOpenCityWindow}>
-                      <span className="city_toggle_text">Умань</span>
-                      <i className="city_toggle_arrow fa-solid fa-chevron-down"></i>
-                    </button>
-                  </div>
-                </div>
-              </li>
-              <li className="burger_menu_item border_zero">
-                <AboutCompany />
-                <Help />
-                <CustomAccordion accordionTitle={'Сервіси'}>
-                  <ul className="footer_sidebar_list">
-                    <li>
-                      <Link href="/">Бонусний рахунок</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Rozetka Premium</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Подарункові сертефікати</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Rozetka обмін</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Тури та відпочинок</Link>
-                    </li>
-                  </ul>
-                </CustomAccordion>
-                <CustomAccordion accordionTitle={'Партнерам'}>
-                  <ul className="footer_sidebar_list">
-                    <li>
-                      <Link href="/">Продавати на Розетці</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Співпраця з нами</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Франчайзинг</Link>
-                    </li>
-                    <li>
-                      <Link href="/">Оренда приміщень</Link>
-                    </li>
-                  </ul>
-                </CustomAccordion>
-              </li>
-              <ApplicationStore appClass={'app_store_burger'} />
-              <SocialsMain SocialsLinks={SocialsLinks} socialsClass={'socials_sidebar_block_burger'} />
-            </ul>
           </div>
+          <a className={styles.burger_comeback} href="https://savelife.in.ua/donate/">
+            <i className={clsx(styles.comeback_shield, 'fa-solid', 'fa-shield-heart')} />
+            Повернись живим
+            <i className={clsx(styles.comeback_arrow, 'fa-solid', 'fa-chevron-right')} />
+          </a>
+
+          <ul className={styles.burger_menu_list}>
+            <li className={styles.burger_menu_item}>
+              <button className={styles.burger_menu_button}>
+                <span className={styles.burger_menu_icon_button}>
+                  <GridViewOutlinedIcon sx={{ fontSize: 30 }} />
+                </span>
+                Каталог товарів
+              </button>
+            </li>
+            <li className={styles.burger_menu_item}>
+              <Link href="/">
+                <button className={styles.burger_menu_button}>
+                  <span className={styles.burger_menu_icon_button}>
+                    <FontAwesomeIcon icon={faCircleQuestion} />
+                  </span>
+                  Довідковий центр
+                </button>
+              </Link>
+
+              <a
+                className={clsx(styles.burger_menu_button, styles.chat_button)}
+                href="https://t.me/Rozetka_helpBot?start=src=hc"
+              >
+                <span className={styles.burger_menu_icon_button}>
+                  <FontAwesomeIcon icon={faPaperPlane} />
+                </span>
+                Чат з ROZETKA
+              </a>
+            </li>
+            <li className={clsx(styles.burger_menu_item, styles.border_zero)}>
+              <Link href="/shopCart/ShopCart" onClick={handleCloseBurgerMenu}>
+                <button className={styles.burger_menu_button}>
+                  <span className={styles.burger_menu_icon_button}>
+                    <FontAwesomeIcon icon={faCartShopping} />
+                  </span>
+                  Кошик
+                </button>
+              </Link>
+            </li>
+          </ul>
+          <ul className={styles.burger_menu_list}>
+            <li className={styles.burger_menu_item}>
+              <div className={styles.burger_menu_switch}>
+                <p className={styles.burger_menu_switch_label}>Мова</p>
+                <div className={styles.burger_lang_block}>
+                  <ul className={styles.burger_lang_list}>
+                    <li className={clsx(styles.burger_lang_item, styles.lang_link)}>
+                      <Link href="/">RU</Link>
+                    </li>
+                    <li
+                      className={clsx(
+                        styles.burger_lang_item,
+                        styles.lang_space,
+                        styles.lang_link,
+                        styles.lang_link_active,
+                      )}
+                    >
+                      <Link href="/">
+                        <Image alt="ua" height={16} src="/Lang/ua.svg" width={24} />
+                        UA
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className={styles.burger_menu_switch}>
+                <p className={styles.burger_menu_switch_label}>Місто</p>
+                <div className={styles.burger_menu_city_toggle}>
+                  <button className={clsx('button', styles.city_toggle)} onClick={handleOpenCityWindow}>
+                    <span className={styles.city_toggle_text}>Умань</span>
+                    <i className={clsx(styles.city_toggle_arrow, 'fa-solid', 'fa-chevron-down')}></i>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li className={clsx(styles.burger_menu_item, styles.border_zero)}>
+              <AboutCompany />
+              <Help />
+              <CustomAccordion accordionTitle={'Сервіси'}>
+                <ul className={styles.footer_sidebar_list}>
+                  <li>
+                    <Link href="/">Бонусний рахунок</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Rozetka Premium</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Подарункові сертефікати</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Rozetka обмін</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Тури та відпочинок</Link>
+                  </li>
+                </ul>
+              </CustomAccordion>
+              <CustomAccordion accordionTitle={'Партнерам'}>
+                <ul className={styles.footer_sidebar_list}>
+                  <li>
+                    <Link href="/">Продавати на Розетці</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Співпраця з нами</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Франчайзинг</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Оренда приміщень</Link>
+                  </li>
+                </ul>
+              </CustomAccordion>
+            </li>
+            <ApplicationStore appClassName={'app_store_burger'} />
+            <SocialsMain SocialsLinks={SocialsLinks} socialsClassName={'socials_sidebar_block_burger'} />
+          </ul>
         </div>
       </div>
     </>

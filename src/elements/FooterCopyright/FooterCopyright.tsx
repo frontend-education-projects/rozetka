@@ -1,15 +1,16 @@
 import React from 'react'
 
 import { CopyrightText } from './CopyrightText'
+import styles from './FooterCopyright.module.sass'
 import { PaymentMastercard } from './PaymentMastercard'
 import { PaymentVisa } from './PaymentVisa'
 
 export const FooterCopyright = () => {
   return (
     <>
-      <div className="copyright_block">
-        <div className="copyright_payments">
-          <ul className="payments_buttons">
+      <div className={styles.copyright_block}>
+        <div className={styles.copyright_payments}>
+          <ul className={styles.payments_buttons}>
             <PaymentMastercard />
             <PaymentVisa />
           </ul>

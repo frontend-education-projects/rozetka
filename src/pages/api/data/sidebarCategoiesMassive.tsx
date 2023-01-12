@@ -138,42 +138,42 @@ export const sidebarLinks: LinksProps[] = [
 export const SocialsLinks: SocialsLinksProps[] = [
   {
     id: 18,
-    classSoc: 'facebook',
+    classSoc: 'socials_facebook',
     socIcon: 'facebook-f',
     socPath: '/',
   },
 
   {
     id: 19,
-    classSoc: 'twitter',
+    classSoc: 'socials_twitter',
     socIcon: 'twitter',
     socPath: '/',
   },
 
   {
     id: 20,
-    classSoc: 'youtube',
+    classSoc: 'socials_youtube',
     socIcon: 'youtube',
     socPath: '/',
   },
 
   {
     id: 21,
-    classSoc: 'instagram',
+    classSoc: 'socials_instagram',
     socIcon: 'instagram',
     socPath: '/',
   },
 
   {
     id: 22,
-    classSoc: 'viber',
+    classSoc: 'socials_viber',
     socIcon: 'viber',
     socPath: '/',
   },
 
   {
     id: 23,
-    classSoc: 'telegram',
+    classSoc: 'socials_telegram',
     socIcon: 'telegram',
     socPath: '/',
   },

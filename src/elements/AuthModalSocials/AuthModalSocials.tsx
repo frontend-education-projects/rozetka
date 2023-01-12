@@ -6,10 +6,10 @@ export const AuthModalSocials = () => {
       <div className="auth_modal_socials_buttons">
         <div className="auth_modal_socials_label">Увійти як користувач</div>
         <button className="button button_socials">
-          <i className="fa-brands fa-facebook-f" /> Facebook
+          <i className="facebookicon fa-brands fa-facebook-f" /> Facebook
         </button>
         <button className="button button_socials button_space">
-          <i className="fa-brands fa-google" /> Google
+          <i className="googleicon fa-brands fa-google" /> Google
         </button>
       </div>
     </div>
