@@ -1,13 +1,13 @@
 import clsx from 'clsx'
-import { createElement, ElementType, FC, ReactNode } from 'react'
+import { createElement, FC, ReactNode } from 'react'
 
 import styles from './Button.module.sass'
 
 type ButtonProps = {
   children: ReactNode
-  component: ElementType
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'href' | 'href_'
-  classVariant: string
+  component: 'button' | 'a'
+  variant: 'primary' | 'secondary' | 'tertiary' | 'link' | 'linkUnderline'
+  classNameStyles: string
   href?: string
   onClick?: () => void
   type?: 'submit' | 'button'
@@ -18,7 +18,7 @@ export const Button: FC<ButtonProps> = ({
   children,
   component,
   variant = 'primary',
-  classVariant,
+  classNameStyles,
   href,
   type = 'button',
   disabled,
@@ -31,7 +31,7 @@ export const Button: FC<ButtonProps> = ({
       href,
       type,
       disabled,
-      className: clsx(styles.button, styles[classVariant], styles[variant]),
+      className: clsx(styles.button, styles[classNameStyles], styles[variant]),
     },
     children,
   )
