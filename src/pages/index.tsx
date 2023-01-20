@@ -1,20 +1,14 @@
+import { sidebarLinks } from '@api/sidebarCategoiesMassive'
+import { SliderPhotoMassive, SliderPhotoProps } from '@api/SliderPhotosMassive'
+import { MainSlider } from '@elements/MainSlider/MainSlider'
+import { SideBar } from '@elements/SideBar/SideBar'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { MainSlider } from 'src/elements/MainSlider/MainSlider'
-import { SideBar } from 'src/elements/SideBar/SideBar'
 import { SwiperSlide } from 'swiper/react'
 
-import { sidebarLinks } from './api/data/sidebarCategoiesMassive'
-import { SliderPhotoMassive } from './api/data/SliderPhotosMassive'
 import styles from './index.module.sass'
-
-type SliderPhotoProps = {
-  id: number
-  picture: string
-  pathPicture: string
-}
 
 export const Home = () => {
   return (
@@ -33,13 +27,13 @@ export const Home = () => {
               <MainSlider>
                 {SliderPhotoMassive.map(({ id, picture, pathPicture }: SliderPhotoProps) => (
                   <SwiperSlide key={id}>
-                    <Link href={`${pathPicture}`}>
+                    <Link href={`${String(pathPicture)}`}>
                       <Image
                         alt="slide"
                         height={400}
                         placeholder="empty"
                         priority={true}
-                        src={`/sliderImg/${picture}.jpg`}
+                        src={`/sliderImg/${String(picture)}.jpg`}
                         width={1200}
                       />
                     </Link>

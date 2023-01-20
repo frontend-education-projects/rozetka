@@ -1,9 +1,9 @@
+import { Burger } from '@elements/Burger/Burger'
+import { Catalog } from '@elements/header_Catalog/Catalog'
+import { HeaderActions } from '@elements/HeaderActions/HeaderActions'
+import { Logo } from '@elements/Logo/Logo'
+import { Input } from '@elements/Search-bar/Input'
 import React from 'react'
-import { Burger } from 'src/elements/Burger/Burger'
-import { Catalog } from 'src/elements/header_Catalog/Catalog'
-import { HeaderActions } from 'src/elements/HeaderActions/HeaderActions'
-import { Logo } from 'src/elements/Logo/Logo'
-import { Input } from 'src/elements/Search-bar/Input'
 
 import styles from './Header.module.sass'
 

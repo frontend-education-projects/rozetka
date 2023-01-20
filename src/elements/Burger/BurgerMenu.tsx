@@ -1,3 +1,9 @@
+import { SocialsLinks } from '@api/sidebarCategoiesMassive'
+import { CustomAccordion } from '@elements/Accordion/CustomAccordion'
+import { ApplicationStore } from '@elements/ApplicationStore/ApplicationStore'
+import { AboutCompany } from '@elements/FooterSidebarElements/AboutCompany'
+import { Help } from '@elements/FooterSidebarElements/Help'
+import { SocialsMain } from '@elements/Socials/SocialsMain'
 import { faCartShopping, faCircleQuestion, faPaperPlane, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined'
@@ -5,13 +11,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { CustomAccordion } from 'src/elements/Accordion/CustomAccordion'
-import { ApplicationStore } from 'src/elements/ApplicationStore/ApplicationStore'
-import { AboutCompany } from 'src/elements/FooterSidebarElements/AboutCompany'
-import { Help } from 'src/elements/FooterSidebarElements/Help'
-import { SocialsMain } from 'src/elements/Socials/SocialsMain'
 
-import { SocialsLinks } from '../../pages/api/data/sidebarCategoiesMassive'
 import styles from './BurgerMenu.module.sass'
 
 type BurgerMenuProps = {
