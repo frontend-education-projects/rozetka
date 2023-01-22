@@ -1,6 +1,6 @@
-import '../styles/global.sass'
-import '../styles/globalReset.sass'
-import '../styles/globalModalWindowStyles.sass'
+import '@styles/global.sass'
+import '@styles/globalReset.sass'
+import '@styles/globalModalWindowStyles.sass'
 import '../elements/MainSlider/MainSliderStyle.sass'
 
 import { Layout } from '@elements/Layout/Layout'

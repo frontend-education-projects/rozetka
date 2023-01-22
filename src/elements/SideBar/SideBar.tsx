@@ -1,4 +1,4 @@
-import { SocialsLinks } from '@api/sidebarCategoiesMassive'
+import { SocialsLinks } from '@data/SidebarCategoiesMassive'
 import { ApplicationStore } from '@elements/ApplicationStore/ApplicationStore'
 import { AuthorSidebar } from '@elements/AuthorSidebar/AuthorSidebar'
 import { FooterCopyright } from '@elements/FooterCopyright/FooterCopyright'

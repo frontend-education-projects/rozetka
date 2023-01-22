@@ -1,4 +1,4 @@
-import { SocialsLinks } from '@api/sidebarCategoiesMassive'
+import { SocialsLinks } from '@data/SidebarCategoiesMassive'
 import { CustomAccordion } from '@elements/Accordion/CustomAccordion'
 import { ApplicationStore } from '@elements/ApplicationStore/ApplicationStore'
 import { AboutCompany } from '@elements/FooterSidebarElements/AboutCompany'

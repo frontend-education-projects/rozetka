@@ -1,5 +1,5 @@
-import { sidebarLinks } from '@api/sidebarCategoiesMassive'
-import { SliderPhotoMassive, SliderPhotoProps } from '@api/SliderPhotosMassive'
+import { sidebarLinks } from '@data/SidebarCategoiesMassive'
+import { SliderPhotoMassive, SliderPhotoProps } from '@data/SliderPhotosMassive'
 import { MainSlider } from '@elements/MainSlider/MainSlider'
 import { SideBar } from '@elements/SideBar/SideBar'
 import Head from 'next/head'
