@@ -1,6 +1,6 @@
+import { CopyrightModalWindow } from '@elements/FooterCopyrightModal/CopyrightModalWindow'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { CopyrightModalWindow } from 'src/elements/FooterCopyrightModal/CopyrightModalWindow'
 
 import styles from './FooterCopyright.module.sass'
 

@@ -1,9 +1,9 @@
+import { ModalWindow } from '@elements/ModalWindowReg/ModalWindow'
 import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { ModalWindow } from 'src/elements/ModalWindowReg/ModalWindow'
 
 import styles from './HeaderActions.module.sass'
 

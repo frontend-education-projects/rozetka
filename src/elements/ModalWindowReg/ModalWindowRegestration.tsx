@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
+import { AuthModalSocials } from '@elements/AuthModalSocials/AuthModalSocials'
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { AuthModalSocials } from 'src/elements/AuthModalSocials/AuthModalSocials'
 
 import { ButtonModalWindow } from './ButtonModalWindow'
 

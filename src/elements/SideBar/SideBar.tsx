@@ -1,16 +1,16 @@
+import { SocialsLinks } from '@data/SidebarCategoiesMassive'
+import { ApplicationStore } from '@elements/ApplicationStore/ApplicationStore'
+import { AuthorSidebar } from '@elements/AuthorSidebar/AuthorSidebar'
+import { FooterCopyright } from '@elements/FooterCopyright/FooterCopyright'
+import { FooterSidebar } from '@elements/FooterSidebarElements/FooterSidebar'
+import { ModalWindow } from '@elements/ModalWindowReg/ModalWindow'
+import { SocialsMain } from '@elements/Socials/SocialsMain'
 import { faCircleQuestion, faPaperPlane, faShop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React from 'react'
 import { useState } from 'react'
-import { ApplicationStore } from 'src/elements/ApplicationStore/ApplicationStore'
-import { AuthorSidebar } from 'src/elements/AuthorSidebar/AuthorSidebar'
-import { FooterCopyright } from 'src/elements/FooterCopyright/FooterCopyright'
-import { FooterSidebar } from 'src/elements/FooterSidebarElements/FooterSidebar'
-import { ModalWindow } from 'src/elements/ModalWindowReg/ModalWindow'
-import { SocialsMain } from 'src/elements/Socials/SocialsMain'
 
-import { SocialsLinks } from '../../pages/api/data/sidebarCategoiesMassive'
 import styles from './SIdeBar.module.sass'
 
 type LinksSidebarProps = {
