@@ -1,4 +1,4 @@
-import { EmptyCart } from '@elements/EmptyCart/EmptyCart'
+import { EmptyCart } from '@elements/EmptyCart'
 import React from 'react'
 
 import styles from './ShopCart.module.sass'

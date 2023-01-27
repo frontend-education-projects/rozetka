@@ -1,9 +1,9 @@
 import '@styles/global.sass'
 import '@styles/globalReset.sass'
 import '@styles/globalModalWindowStyles.sass'
-import '../elements/MainSlider/MainSliderStyle.sass'
+import '../modules/MainSlider/MainSliderStyle.sass'
 
-import { Layout } from '@elements/Layout/Layout'
+import { Layout } from '@layout/Layout'
 import type { AppProps } from 'next/app'
 import React from 'react'
 
