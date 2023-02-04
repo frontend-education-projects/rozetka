@@ -1,3 +1,4 @@
+import { Typography } from '@elements/Typography'
 import React from 'react'
 
 import styles from './AuthorSidebar.module.sass'
@@ -14,8 +15,13 @@ export const AuthorSidebar = ({ setOpen }: AuthorSidebarProps) => {
   return (
     <div className={styles.auth_wrapper}>
       <div className={styles.main_auth}>
-        <div className={styles.auth_title}>Ласкаво просимо!</div>
-        <div className={styles.auth_subtitle}>Увійдіть, щоб отримувати рекомендації,персональні бонуси і знижки.</div>
+        <Typography component={'h3'} marginBottom={'mb-8'} variant={'h4'}>
+          Ласкаво просимо!
+        </Typography>
+        <Typography component={'p'} marginBottom={'mb-12'} variant={'subtitle2'}>
+          Увійдіть, щоб отримувати рекомендації,персональні бонуси і знижки.
+        </Typography>
+        <div className={styles.auth_subtitle}></div>
         <button className={styles.btn_auth} onClick={handleOpenMainWindow} type="button">
           Увійдіть в особистий кабінет
         </button>

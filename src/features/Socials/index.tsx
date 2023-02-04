@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 
+import { Typography } from '@elements/Typography'
 import {} from '@fortawesome/free-solid-svg-icons'
 import clsx from 'clsx'
 import React from 'react'
@@ -32,7 +33,9 @@ export const SocialsMain = ({ SocialsLinks, socialsClassName }: SocialsLinksProp
 
   return (
     <div className={clsx(styles.socials_sidebar_block, styles[socialsClassName || ''])}>
-      <div className={styles.socials_sidebar_heading}>Ми в соціальних мережах</div>
+      <Typography component={'h4'} marginBottom={'mb-12'} variant={'h6'}>
+        Ми в соціальних мережах
+      </Typography>
       <ul className={styles.socials_list}>
         {SocialsLinks.map(({ id, classSoc, socIcon, socPath }: SocialsLinksInfoProps) => (
           <li className={styles.socials_list_item} key={id}>

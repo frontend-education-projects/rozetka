@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { AuthModalSocials } from '@elements/AuthModalSocials'
+import { Typography } from '@elements/Typography'
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -88,7 +89,9 @@ export const ModalWindow = ({
       <div className={clsx('modal_holder', open ? 'show_holder' : '')} onClick={handleCloseModalWindow}></div>
       <div className={clsx('modal_window', open ? 'show_window' : '')}>
         <div className="modal_header">
-          <div className="modal_heading">Вхід</div>
+          <Typography component={'h3'} variant={'h3'}>
+            Вхід
+          </Typography>
           <button className="modal_close" onClick={handleCloseModalWindow}>
             X
           </button>

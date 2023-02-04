@@ -1,3 +1,4 @@
+import { Typography } from '@elements/Typography'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
@@ -26,7 +27,9 @@ export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: Mod
       ></div>
       <div className={clsx(styles.modal_city_window, openWindowCity ? styles.show_city_window : '')}>
         <div className={styles.modal_city_header}>
-          <div className={styles.modal_city_heading}>Виберіть своє місто</div>
+          <Typography component={'h3'} variant={'h3'}>
+            Виберіть своє місто
+          </Typography>
           <button className={styles.modal_city_close} onClick={handleCloseCityWindow}>
             X
           </button>

@@ -1,3 +1,4 @@
+import { Typography } from '@elements/Typography'
 import clsx from 'clsx'
 import React, { ReactNode, useState } from 'react'
 
@@ -18,7 +19,9 @@ export const CustomAccordion = ({ accordionTitle, children }: CustomAccordionPro
   return (
     <div className={styles.footer_sidebar_links}>
       <div className={styles.footer_sidebar_heading}>
-        <div className={styles.footer_sidebar_title}>{accordionTitle}</div>
+        <Typography component={'h3'} variant={'h6'}>
+          {accordionTitle}
+        </Typography>
         <button className={clsx('button', styles.accordion_icon)} onClick={toggleHendler}>
           <i aria-expanded={openAccordion} className={clsx(styles.accordion_arrow, 'fa-solid', 'fa-chevron-down')} />
         </button>

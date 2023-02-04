@@ -1,3 +1,4 @@
+import { Typography } from '@elements/Typography'
 import Link from 'next/link'
 import React from 'react'
 
@@ -7,7 +8,9 @@ export const AboutCompany = () => {
   return (
     <div className={styles.footer_sidebar_links}>
       <div className={styles.footer_sidebar_heading}>
-        <div className={styles.footer_sidebar_title}>Інформація про компанію</div>
+        <Typography component={'h3'} variant={'h6'}>
+          Інформація про компанію
+        </Typography>
       </div>
       <ul className={styles.footer_sidebar_list}>
         <li>
