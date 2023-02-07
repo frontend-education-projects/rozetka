@@ -1,3 +1,4 @@
+import { Typography } from '@elements/Typography'
 import clsx from 'clsx'
 import Image from 'next/image'
 import React from 'react'
@@ -11,7 +12,9 @@ type AppStoreProp = {
 export const ApplicationStore = ({ appClassName }: AppStoreProp) => {
   return (
     <div className={clsx(styles.apps_store, styles[appClassName || ''])}>
-      <div className={styles.store_title}>Встановлюй наші додатки</div>
+      <Typography component="h4" marginBottom="mb-12" variant="h6">
+        Встановлюй наші додатки
+      </Typography>
       <div className={styles.store_buttons}>
         <a
           href="https://play.google.com/store/apps/details/?id=ua.com.rozetka.shop&referrer=utm_source%3Dfullversion%26utm_medium%3Dsite%26utm_campaign%3Dfullversion"

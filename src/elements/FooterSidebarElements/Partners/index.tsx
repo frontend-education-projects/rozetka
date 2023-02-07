@@ -1,3 +1,4 @@
+import { Typography } from '@elements/Typography'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
@@ -8,7 +9,9 @@ export const Partners = () => {
   return (
     <div className={clsx(styles.footer_sidebar_links, styles.border_zero)}>
       <div className={styles.footer_sidebar_heading}>
-        <div className={styles.footer_sidebar_title}>Інформація про компанію</div>
+        <Typography component="h3" variant="h6">
+          Партнерам
+        </Typography>
       </div>
       <ul className={styles.footer_sidebar_list}>
         <li>

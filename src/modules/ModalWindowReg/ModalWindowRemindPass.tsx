@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { AuthModalSocials } from '@elements/AuthModalSocials'
+import { Typography } from '@elements/Typography'
 import clsx from 'clsx'
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -46,7 +47,9 @@ export const ModalWindowRemindPass = ({ openRemindePass, setOpenRemindePass, set
       <div className={clsx('modal_holder', openRemindePass ? 'show_holder' : '')} onClick={handleCloseWindow}></div>
       <div className={clsx('modal_window', openRemindePass ? 'show_window' : '')}>
         <div className="modal_header">
-          <div className="modal_heading">Вхід</div>
+          <Typography component="h3" variant="h3">
+            Вхід
+          </Typography>
           <button className="modal_close" onClick={handleCloseWindow}>
             X
           </button>
