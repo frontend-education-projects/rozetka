@@ -6,7 +6,7 @@ import styles from './FooterCopyrightText.module.sass'
 export const CopyrightText = () => {
   return (
     <>
-      <Typography colorVariant={'gray'} component={'p'} variant={'subtitle2'}>
+      <Typography colorVariant="gray" component="p" variant="subtitle2">
         ТМ використовується на підставі ліцензії правовласника RozetkaLTD.
       </Typography>
       <p className={styles.copyright_subtext}>© Інтернет-магазин «Розетка™»</p>

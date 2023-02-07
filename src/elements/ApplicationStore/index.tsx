@@ -12,7 +12,7 @@ type AppStoreProp = {
 export const ApplicationStore = ({ appClassName }: AppStoreProp) => {
   return (
     <div className={clsx(styles.apps_store, styles[appClassName || ''])}>
-      <Typography component={'h4'} marginBottom={'mb-12'} variant={'h6'}>
+      <Typography component="h4" marginBottom="mb-12" variant="h6">
         Встановлюй наші додатки
       </Typography>
       <div className={styles.store_buttons}>

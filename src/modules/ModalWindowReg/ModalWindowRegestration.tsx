@@ -72,7 +72,7 @@ export const ModalWindowRegestration = ({
       ></div>
       <div className={clsx('modal_window', openRegestration ? 'show_window' : '')}>
         <div className="modal_header">
-          <Typography component={'h3'} variant={'h3'}>
+          <Typography component="h3" variant="h3">
             Реєстрація
           </Typography>
           <button className="modal_close" onClick={handleCloseRegestrationWindow}>

@@ -27,7 +27,7 @@ export const BurgerModalWindowCity = ({ openWindowCity, setOpenWindowCity }: Mod
       ></div>
       <div className={clsx(styles.modal_city_window, openWindowCity ? styles.show_city_window : '')}>
         <div className={styles.modal_city_header}>
-          <Typography component={'h3'} variant={'h3'}>
+          <Typography component="h3" variant="h3">
             Виберіть своє місто
           </Typography>
           <button className={styles.modal_city_close} onClick={handleCloseCityWindow}>

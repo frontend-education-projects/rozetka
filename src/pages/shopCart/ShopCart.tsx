@@ -8,7 +8,7 @@ export const ShopCart = () => {
   return (
     <div className={styles.shop_cart}>
       <div className={styles.container}>
-        <Typography component={'h1'} marginBottom={'mb-24'} variant={'h4'}>
+        <Typography component="h1" marginBottom="mb-24" variant="h4">
           Кошик
         </Typography>
 

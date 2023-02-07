@@ -47,7 +47,7 @@ export const ModalWindowRemindPass = ({ openRemindePass, setOpenRemindePass, set
       <div className={clsx('modal_holder', openRemindePass ? 'show_holder' : '')} onClick={handleCloseWindow}></div>
       <div className={clsx('modal_window', openRemindePass ? 'show_window' : '')}>
         <div className="modal_header">
-          <Typography component={'h3'} variant={'h3'}>
+          <Typography component="h3" variant="h3">
             Вхід
           </Typography>
           <button className="modal_close" onClick={handleCloseWindow}>

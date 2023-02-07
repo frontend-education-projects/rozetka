@@ -8,7 +8,7 @@ export const AboutCompany = () => {
   return (
     <div className={styles.footer_sidebar_links}>
       <div className={styles.footer_sidebar_heading}>
-        <Typography component={'h3'} variant={'h6'}>
+        <Typography component="h3" variant="h6">
           Інформація про компанію
         </Typography>
       </div>

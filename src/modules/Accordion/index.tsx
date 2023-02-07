@@ -19,7 +19,7 @@ export const CustomAccordion = ({ accordionTitle, children }: CustomAccordionPro
   return (
     <div className={styles.footer_sidebar_links}>
       <div className={styles.footer_sidebar_heading}>
-        <Typography component={'h3'} variant={'h6'}>
+        <Typography component="h3" variant="h6">
           {accordionTitle}
         </Typography>
         <button className={clsx('button', styles.accordion_icon)} onClick={toggleHendler}>

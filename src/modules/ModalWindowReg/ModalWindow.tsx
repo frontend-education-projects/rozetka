@@ -89,7 +89,7 @@ export const ModalWindow = ({
       <div className={clsx('modal_holder', open ? 'show_holder' : '')} onClick={handleCloseModalWindow}></div>
       <div className={clsx('modal_window', open ? 'show_window' : '')}>
         <div className="modal_header">
-          <Typography component={'h3'} variant={'h3'}>
+          <Typography component="h3" variant="h3">
             Вхід
           </Typography>
           <button className="modal_close" onClick={handleCloseModalWindow}>
