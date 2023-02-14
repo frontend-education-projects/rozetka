@@ -1,5 +1,8 @@
+import { ProductCardMainInfo, ProductInfo } from '@data/ProductCardInfo'
 import { sidebarLinks } from '@data/SidebarCategoiesMassive'
 import { SliderPhotoMassive, SliderPhotoProps } from '@data/SliderPhotosMassive'
+import { ProductCard } from '@features/ProductCard'
+import { ProductCardMain } from '@features/ProductCardMain'
 import { SideBar } from '@features/SideBar'
 import { MainSlider } from '@modules/MainSlider'
 import Head from 'next/head'
@@ -11,6 +14,41 @@ import { SwiperSlide } from 'swiper/react'
 import styles from './index.module.sass'
 
 export const Home = () => {
+  const productsCards =
+    ProductCardMainInfo &&
+    ProductCardMainInfo.map(
+      (obj: {
+        id: number
+        imageUrl: string
+        pathUrl: string
+        title: string
+        old_price: number
+        new_price: number
+        currency: string
+      }) => <ProductCardMain key={obj.id} {...obj} />,
+    )
+
+  const productsCardsMain =
+    ProductInfo &&
+    ProductInfo.map(
+      (obj: {
+        id: number
+        topSales: string
+        imageUrl: string
+        imageUrlHover: string
+        pathUrl: string
+        title: string
+        comments_amount: number
+        stars: string
+        old_price: number
+        new_price: number
+        currency: string
+        deliveryStatus: string
+        description: string
+        bonus: number
+      }) => <ProductCard key={obj.id} {...obj} />,
+    )
+
   return (
     <>
       <Head>
@@ -19,9 +57,9 @@ export const Home = () => {
       <div className={styles.wrapper}>
         <div className={styles.main}>
           <div className={styles.layout_with_sidebar}>
-            <div className={styles.sidebar_main}>
+            <aside className={styles.sidebar_main}>
               <SideBar sidebarLinks={sidebarLinks} />
-            </div>
+            </aside>
 
             <div className={styles.main_content}>
               <MainSlider>
@@ -40,6 +78,8 @@ export const Home = () => {
                   </SwiperSlide>
                 ))}
               </MainSlider>
+              {productsCards}
+              {productsCardsMain}
             </div>
           </div>
         </div>

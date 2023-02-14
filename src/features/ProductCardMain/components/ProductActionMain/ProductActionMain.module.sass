@@ -1,0 +1,37 @@
+.product_action
+  position: absolute
+  display: flex
+  flex-direction: column
+  gap: 5px
+  right: 8px
+  top: 12px
+  z-index: 5
+
+.wish_wrapper
+  display: flex
+  flex-direction: row
+  align-items: center
+
+.wish_button
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  width: 32px
+  height: 32px
+  background-color: #fff
+  padding: 0
+  border: none
+  border-radius: 4px
+  cursor: pointer
+  transition: all 0.3s ease
+  &:hover
+    background-color: #f4faf6
+  & i
+    font-size: 19px
+
+.wish_heart
+  color: var(--main-icon-color)
+
+.compare
+  color: var(--global-black-40)
