@@ -1,4 +1,4 @@
-import { ProductCardMainInfo, ProductInfo } from '@data/ProductCardInfo'
+import { ProductCardMainInfo, ProductCardMainInfoProps, ProductInfo, ProductInfoProps } from '@data/ProductCardInfo'
 import { sidebarLinks } from '@data/SidebarCategoiesMassive'
 import { SliderPhotoMassive, SliderPhotoProps } from '@data/SliderPhotosMassive'
 import { ProductCard } from '@features/ProductCard'
@@ -14,41 +14,6 @@ import { SwiperSlide } from 'swiper/react'
 import styles from './index.module.sass'
 
 export const Home = () => {
-  const productsCards =
-    ProductCardMainInfo &&
-    ProductCardMainInfo.map(
-      (obj: {
-        id: number
-        imageUrl: string
-        pathUrl: string
-        title: string
-        old_price: number
-        new_price: number
-        currency: string
-      }) => <ProductCardMain key={obj.id} {...obj} />,
-    )
-
-  const productsCardsMain =
-    ProductInfo &&
-    ProductInfo.map(
-      (obj: {
-        id: number
-        topSales: string
-        imageUrl: string
-        imageUrlHover: string
-        pathUrl: string
-        title: string
-        comments_amount: number
-        stars: string
-        old_price: number
-        new_price: number
-        currency: string
-        deliveryStatus: string
-        description: string
-        bonus: number
-      }) => <ProductCard key={obj.id} {...obj} />,
-    )
-
   return (
     <>
       <Head>
@@ -78,8 +43,17 @@ export const Home = () => {
                   </SwiperSlide>
                 ))}
               </MainSlider>
-              {productsCards}
-              {productsCardsMain}
+              <ul style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                {ProductCardMainInfo?.map(({ ...obj }: ProductCardMainInfoProps) => (
+                  <ProductCardMain key={obj.id} {...obj} />
+                ))}
+              </ul>
+
+              <ul style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                {ProductInfo?.map(({ ...obj }: ProductInfoProps) => (
+                  <ProductCard key={obj.id} {...obj} />
+                ))}
+              </ul>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/forbid-component-props */
+import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from './ProductImageMain.module.sass'
@@ -12,9 +11,11 @@ type ProductImageProps = {
 export const ProductImageMain = ({ imageUrl, pathUrl }: ProductImageProps) => {
   return (
     <>
-      <Link className={styles.product_image} href={pathUrl}>
-        <img alt="Product" src={imageUrl} />
-      </Link>
+      <div className={styles.product_image}>
+        <Link href={pathUrl}>
+          <Image alt="Product" height={140} src={imageUrl} width={140} />
+        </Link>
+      </div>
     </>
   )
 }

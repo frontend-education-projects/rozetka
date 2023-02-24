@@ -102,7 +102,7 @@ export const ProductInfo: ProductInfoProps[] = [
 export const ProductCardMainInfo: ProductCardMainInfoProps[] = [
   {
     id: 40,
-    imageUrl: 'https://content2.rozetka.com.ua/goods/images/big_tile/175333147.jpg',
+    imageUrl: 'https://content.rozetka.com.ua/goods/images/preview/163386254.jpg',
     pathUrl: '/',
     title: 'Ноутбук Acer Aspire 7 A715-42G-R3EZ (NH.QBFEU.00C) Charcoal Black / AMD',
     old_price: 40999,
@@ -112,7 +112,7 @@ export const ProductCardMainInfo: ProductCardMainInfoProps[] = [
 
   {
     id: 41,
-    imageUrl: 'https://content.rozetka.com.ua/goods/images/big_tile/263944404.jpg',
+    imageUrl: 'https://content1.rozetka.com.ua/goods/images/preview/263944408.jpg',
     pathUrl: '/',
     title: 'Мобільний телефон Samsung Galaxy A23 6/128GB Black (SM-A235FZKKSEK)',
     old_price: 9499,
@@ -122,7 +122,7 @@ export const ProductCardMainInfo: ProductCardMainInfoProps[] = [
 
   {
     id: 42,
-    imageUrl: 'https://content2.rozetka.com.ua/goods/images/big_tile/175333147.jpg',
+    imageUrl: 'https://content.rozetka.com.ua/goods/images/preview/163386254.jpg',
     pathUrl: '/',
     title: 'Ноутбук Acer Aspire 7 A715-42G-R3EZ (NH.QBFEU.00C) Charcoal Black / AMD',
     old_price: 40999,
@@ -132,7 +132,7 @@ export const ProductCardMainInfo: ProductCardMainInfoProps[] = [
 
   {
     id: 43,
-    imageUrl: 'https://content.rozetka.com.ua/goods/images/big_tile/263944404.jpg',
+    imageUrl: 'https://content1.rozetka.com.ua/goods/images/preview/263944408.jpg',
     pathUrl: '/',
     title: 'Мобільний телефон Samsung Galaxy A23 6/128GB Black (SM-A235FZKKSEK)',
     old_price: 9499,

@@ -1,4 +1,3 @@
-import { ProductCardMainInfoProps } from '@data/ProductCardInfo'
 import React from 'react'
 
 import { ProductActionMain } from './components/ProductActionMain'
@@ -6,6 +5,16 @@ import { ProductImageMain } from './components/ProductImageMain'
 import { ProductPriceMain } from './components/ProductPriceMain'
 import { ProductTitleMain } from './components/ProductTitleMain'
 import styles from './ProductCardMain.module.sass'
+
+type ProductCardMainInfoProps = {
+  id: number
+  imageUrl: string
+  pathUrl: string
+  title: string
+  old_price: number
+  new_price: number
+  currency: string
+}
 
 export const ProductCardMain = ({
   id,

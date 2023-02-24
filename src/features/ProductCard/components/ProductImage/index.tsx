@@ -1,34 +1,34 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/forbid-component-props */
+import Image from 'next/image'
 import Link from 'next/link'
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import styles from './ProductImage.module.sass'
 
 //! useHover hook
-const useHover = <T extends HTMLElement>(): [(node?: T | null) => void, boolean] => {
+type UseHoverType<T extends HTMLElement> = [React.RefObject<T>, boolean]
+
+const useHover = <T extends HTMLElement>(): UseHoverType<T> => {
   const [hover, setHover] = useState(false)
-  const handleMouseOver = useCallback(() => setHover(true), [])
-  const handleMouseOut = useCallback(() => setHover(false), [])
-  const ref = useRef<T>()
-  const callbackRef = useCallback<(node?: null | T) => void>(
-    (node) => {
-      if (ref.current) {
-        ref.current.removeEventListener('mouseover', handleMouseOver)
-        ref.current.removeEventListener('mouseout', handleMouseOut)
+
+  const ref = useRef<T>(null)
+
+  const handleMouseOver = () => setHover(true)
+  const handleMouseOut = () => setHover(false)
+
+  useEffect(() => {
+    const node = ref.current
+    if (node) {
+      node.addEventListener('mouseover', handleMouseOver)
+      node.addEventListener('mouseout', handleMouseOut)
+
+      return () => {
+        node.removeEventListener('mouseover', handleMouseOver)
+        node.removeEventListener('mouseout', handleMouseOut)
       }
+    }
+  }, [])
 
-      ref.current = node || undefined
-
-      if (ref.current) {
-        ref.current.addEventListener('mouseover', handleMouseOver)
-        ref.current.addEventListener('mouseout', handleMouseOut)
-      }
-    },
-    [handleMouseOver, handleMouseOut],
-  )
-
-  return [callbackRef, hover]
+  return [ref, hover]
 }
 
 type ProductImageProps = {
@@ -41,9 +41,9 @@ export const ProductImage = ({ imageUrl, imageUrlHover, pathUrl }: ProductImageP
   const [hoverRef, isHovered] = useHover<HTMLDivElement>()
   return (
     <>
-      <div ref={hoverRef}>
-        <Link className={styles.product_image} href={pathUrl}>
-          <img alt="Product" src={isHovered ? imageUrlHover : imageUrl} />
+      <div className={styles.product_image} ref={hoverRef}>
+        <Link href={pathUrl}>
+          <Image alt="Product" height={200} src={isHovered ? imageUrlHover : imageUrl} width={200} />
         </Link>
       </div>
     </>

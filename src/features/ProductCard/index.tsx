@@ -1,4 +1,3 @@
-import { ProductInfoProps } from '@data/ProductCardInfo'
 import React from 'react'
 
 import { DeliveryStatus } from './components/DeliveryStatus'
@@ -11,6 +10,23 @@ import { ProductRaiting } from './components/ProductRating'
 import { ProductTitle } from './components/ProductTitle'
 import { TopSales } from './components/TopSales'
 import styles from './ProductCard.module.sass'
+
+type ProductInfoProps = {
+  id: number
+  topSales: string
+  imageUrl: string
+  imageUrlHover: string
+  pathUrl: string
+  title: string
+  comments_amount: number
+  stars: string
+  old_price: number
+  new_price: number
+  currency: string
+  deliveryStatus: string
+  description: string
+  bonus: number
+}
 
 export const ProductCard = ({
   id,

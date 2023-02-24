@@ -1,4 +1,4 @@
-.product_image
+.product_image a
   position: relative
   width: 100%
   margin-bottom: 8px
@@ -11,8 +11,9 @@
 .product_image img
   max-width: 100%
   max-height: 100%
+  object-fit: contain
 
-.product_image:before
+.product_image:before a
   content: ''
   display: block
   padding-top: 66%
