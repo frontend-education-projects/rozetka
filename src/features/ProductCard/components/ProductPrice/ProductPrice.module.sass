@@ -1,0 +1,42 @@
+.product_price
+  display: flex
+  flex-direction: column
+  gap: 5px
+
+.product_old_price
+  position: relative
+  font-size: 14px
+  color: var(--global-black-60)
+  text-decoration: line-through
+
+.product_new_price
+  display: flex
+  flex-direction: row
+  align-items: center
+  white-space: nowrap
+  justify-content: space-between
+
+.new_price
+  color: var(--global-red)
+  font-size: 24px
+  & span
+    margin-left: 2px
+    font-size: 16px
+
+.buy_button_cart
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  width: 32px
+  height: 32px
+  padding: 0
+  border: none
+  background-color: #fff
+  border-radius: 4px
+  cursor: pointer
+  color: var(--global-green)
+  font-size: 18px
+  transition: all 0.3s ease
+  &:hover
+    background-color: #f4faf6

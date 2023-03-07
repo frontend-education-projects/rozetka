@@ -1,5 +1,8 @@
+import { ProductCardMainInfo, ProductCardMainInfoProps, ProductInfo, ProductInfoProps } from '@data/ProductCardInfo'
 import { sidebarLinks } from '@data/SidebarCategoiesMassive'
 import { SliderPhotoMassive, SliderPhotoProps } from '@data/SliderPhotosMassive'
+import { ProductCard } from '@features/ProductCard'
+import { ProductCardMain } from '@features/ProductCardMain'
 import { SideBar } from '@features/SideBar'
 import { MainSlider } from '@modules/MainSlider'
 import Head from 'next/head'
@@ -19,9 +22,9 @@ export const Home = () => {
       <div className={styles.wrapper}>
         <div className={styles.main}>
           <div className={styles.layout_with_sidebar}>
-            <div className={styles.sidebar_main}>
+            <aside className={styles.sidebar_main}>
               <SideBar sidebarLinks={sidebarLinks} />
-            </div>
+            </aside>
 
             <div className={styles.main_content}>
               <MainSlider>
@@ -40,6 +43,17 @@ export const Home = () => {
                   </SwiperSlide>
                 ))}
               </MainSlider>
+              <ul style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                {ProductCardMainInfo?.map(({ ...obj }: ProductCardMainInfoProps) => (
+                  <ProductCardMain key={obj.id} {...obj} />
+                ))}
+              </ul>
+
+              <ul style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+                {ProductInfo?.map(({ ...obj }: ProductInfoProps) => (
+                  <ProductCard key={obj.id} {...obj} />
+                ))}
+              </ul>
             </div>
           </div>
         </div>

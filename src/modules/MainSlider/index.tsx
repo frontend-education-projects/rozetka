@@ -1,8 +1,9 @@
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 import React, { ReactNode } from 'react'
-import { Autoplay, Navigation } from 'swiper'
+import { Autoplay, Navigation, Pagination } from 'swiper'
 import { Swiper } from 'swiper/react'
 
 type SliderChildrenProps = {
@@ -17,8 +18,11 @@ export const MainSlider = ({ children }: SliderChildrenProps) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation, Autoplay, Pagination]}
         navigation={true}
+        pagination={{
+          dynamicBullets: true,
+        }}
         rewind={true}
         speed={1000}
       >
